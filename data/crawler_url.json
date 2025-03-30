@@ -1,0 +1,9 @@
+{
+    "url": "https://example.com",
+    "description": "This is a sample URL for demonstration purposes.",
+    "last_crawled": "2023-10-01T12:00:00Z",
+    "status": "active",
+    "crawl_frequency": "daily",
+    "crawl_timeout": 30,
+    "crawl_delay": 5
+}
