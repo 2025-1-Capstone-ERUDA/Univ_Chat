@@ -1,4 +1,4 @@
-# Univ_Chatbot
+# Univ_Chat
 ## ERUDA – 대학 학사정보 맞춤형 챗봇
 
 ## 📌 프로젝트 개요
