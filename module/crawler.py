@@ -16,34 +16,39 @@ else:
     print("⚠️ 오류: 'url' 또는 'urls' 키가 JSON 파일에 없습니다.")
     url_list = []
 
-visited_posts = set()  # ✅ 5. 중복 게시물 방문 방지
+visited_posts = set()  # ✅ 3. 중복 게시물 방문 방지
 
-# ✅ 3. 여러 개의 공지사항 URL 처리
+# ✅ 4. 여러 개의 공지사항 URL 처리
 for site in url_list:
     url = site["url"]
-    crawl_delay = site.get("crawl_delay", 5)  # site에서 꺼내야 해!
+    crawl_delay = site.get("crawl_delay", 5)
 
-    print(f"🔍 {url} 크롤링 중...")
+    print(f"\n🔍 {url} 크롤링 중...")
 
     try:
-        response = requests.get(url, timeout=site.get("crawl_timeout", 30))  # site에서 timeout도 꺼내고
+        response = requests.get(url, timeout=site.get("crawl_timeout", 30))
         response.raise_for_status()
 
         soup = BeautifulSoup(response.text, "html.parser")
+        rows = soup.select("tr")  # 게시글이 있는 행 전체 순회
 
-        posts = soup.select("table.board-table td.title a")  
+        found_posts = 0
 
-        if not posts:
-            print(f"⚠️ 게시글을 찾을 수 없습니다. HTML 구조 확인 필요!")
-            print(soup.prettify())
-            continue
+        for row in rows:
+            # ✅ 5. 고정 공지 건너뛰기
+            is_notice = row.select_one("td.b-num-box.b-notice")
+            if is_notice:
+                continue
 
-        for post in posts:
-            title = post.text.strip()
-            link = post["href"]
+            post_link = row.select_one("td.b-td-left.b-td-title a")
+            if not post_link:
+                continue
+
+            title = post_link.text.strip()
+            link = post_link["href"]
 
             if not link.startswith("http"):
-                link = "https://cse.kangwon.ac.kr/cse/community/" + link
+                link = "https://cse.kangwon.ac.kr/cse/community/" + link.lstrip("/")
 
             if link in visited_posts:
                 print(f"⚠️ 이미 방문한 게시물: {title} (건너뜀)")
@@ -51,6 +56,13 @@ for site in url_list:
 
             print(f"📌 제목: {title}, 링크: {link}")
             visited_posts.add(link)
+            found_posts += 1
+
+        if found_posts == 0:
+            print("⚠️ 게시글을 찾을 수 없습니다. HTML 구조 확인 필요!")
+            print(soup.prettify())
+        else:
+            print(f"✅ 총 {found_posts}개의 게시글을 수집했습니다.")
 
         time.sleep(crawl_delay)
 
