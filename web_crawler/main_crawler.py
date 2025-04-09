@@ -86,7 +86,6 @@ class NoticeCrawler:
             self.collected_data.append(post_data)
             print(f"   📄 게시물 데이터: {post_data}")
             
-            DataHandler.save_to_json(post_data)
             print(f"✅ 게시물 저장 완료: {post_data['title']}")
         except Exception as e:
             print(f"❌ 게시물 처리 실패: {post_url} - {str(e)}")
