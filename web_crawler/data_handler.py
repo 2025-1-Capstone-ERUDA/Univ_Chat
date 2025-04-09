@@ -10,27 +10,28 @@ class DataHandler:
         """디렉토리 존재 여부 확인"""
         os.makedirs(os.path.dirname(file_path), exist_ok=True)
 
-    @staticmethod
-    def save_to_json(data, file_path="data/notices.json"):
-        """JSON 저장 로직 (기존 기능 유지)"""
-        DataHandler._ensure_directory(file_path)
-        existing_data = []
+    # 기능 만들어두었기에 코드로 구현은 하였지만 현재 프로젝트에서는 미사용
+    # @staticmethod
+    # def save_to_json(data, file_path="data/notices.json"):
+    #     """JSON 저장 로직 (기존 기능 유지)"""
+    #     DataHandler._ensure_directory(file_path)
+    #     existing_data = []
         
-        if os.path.exists(file_path):
-            try:
-                with open(file_path, "r", encoding="utf-8") as f:
-                    existing_data = json.load(f)
-                    if not isinstance(existing_data, list):
-                        existing_data = [existing_data]
-            except (json.JSONDecodeError, FileNotFoundError):
-                existing_data = []
+    #     if os.path.exists(file_path):
+    #         try:
+    #             with open(file_path, "r", encoding="utf-8") as f:
+    #                 existing_data = json.load(f)
+    #                 if not isinstance(existing_data, list):
+    #                     existing_data = [existing_data]
+    #         except (json.JSONDecodeError, FileNotFoundError):
+    #             existing_data = []
         
-        if not any(n["title"] == data["title"] and n["date"] == data["date"] 
-                  for n in existing_data):
-            existing_data.append(data)
+    #     if not any(n["title"] == data["title"] and n["date"] == data["date"] 
+    #               for n in existing_data):
+    #         existing_data.append(data)
             
-        with open(file_path, "w", encoding="utf-8") as f:
-            json.dump(existing_data, f, ensure_ascii=False, indent=4)
+    #     with open(file_path, "w", encoding="utf-8") as f:
+    #         json.dump(existing_data, f, ensure_ascii=False, indent=4)
 
     @staticmethod
     def export_to_csv(data_list, output_dir="data", filename=None):
