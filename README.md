@@ -1,4 +1,4 @@
-# Univ_Chatbot
+# Univ_Chat
 ## ERUDA – 대학 학사정보 맞춤형 챗봇
 
 ## 📌 프로젝트 개요
@@ -19,6 +19,7 @@
 - **AI 모델:** Gemini
 - **데이터 수집:** Scrapy / BeautifulSoup / requests
 - **데이터베이스:** FAISS DB(벡터 DB)
+- **RAG:** LlamaIndex(예정)
 - **배포:** 
 
 ## 🔒 사용 및 기여
