@@ -1,30 +1,40 @@
 {
   "urls": [
     {
-      "url": "https://cse.kangwon.ac.kr/cse/community/undergraduate-notice.do?mode=list&article.offset=0",
-      "description": "강원대 컴퓨터공학과 학사공지",
+      "url": "https://health.kangwon.ac.kr/index.php?mt=page&mp=4_1&mm=oxbbs&oxid=1&key=&val=&subcmd=&CAT_ID=0&artpp=15&cpage=1",
+      "description": "강원대 보건진료소 공지",
       "university": "강원대학교",
-      "department": "컴퓨터공학과",
+      "department": "보건진료소",
+      "category": "공지사항",
 
-      "board_path": "div.b-title-box a",
+      "page_id": "cpage",
+      "page_start": 1,
+      "page_offset": 1,
 
-      "title_path": ".b-title-box span:not([class])",
-      "content_path": "div.b-content-box div.fr-view",
-      "writer_path": ".b-writer-box span:last-child",
-      "date_path": ".b-date-box span:last-child",
-      "attachment_path": ".b-file-box a.file-down-btn",
+      "board_path": "td.tit a",
 
+      "title_path": "div.bbs_view dl dt",
+      "content_path": "div.note",
+      "writer_path": "div.name",
+      "date_path": "div.date",
+      "attachment_path": "dd.file",
+
+      "article_ID": "BID",
       "duplicate_check_key": "articleNo",
 
       "crawl_timeout": 30,
       "crawl_delay": 0.5
     },
-
     {
       "url": "https://ai.kangwon.ac.kr/ai/community/notice.do?mode=list&&articleLimit=10&article.offset=0",
       "description": "강원대 AI융합학과 학사공지",
       "university": "강원대학교",
       "department": "AI융합학과",
+      "category": "학부 공지사항",
+
+      "page_id": "article.offset",
+      "page_start": 0,
+      "page_offset": 10,
 
       "board_path": "div.b-title-box a",
 
@@ -34,6 +44,32 @@
       "date_path": ".b-date-box span:last-child",
       "attachment_path": ".b-file-box a.file-down-btn",
 
+      "article_ID": "articleNo",
+      "duplicate_check_key": "articleNo",
+
+      "crawl_timeout": 30,
+      "crawl_delay": 0.5
+    },
+    {
+      "url": "https://cse.kangwon.ac.kr/cse/community/undergraduate-notice.do?mode=list&article.offset=0",
+      "description": "강원대 컴퓨터공학과 학사공지",
+      "university": "강원대학교",
+      "department": "컴퓨터공학과",
+      "category": "학부 공지사항",
+
+      "page_id": "article.offset",
+      "page_start": 0,
+      "page_offset": 10,
+
+      "board_path": "div.b-title-box a",
+
+      "title_path": ".b-title-box span:not([class])",
+      "content_path": "div.b-content-box div.fr-view",
+      "writer_path": ".b-writer-box span:last-child",
+      "date_path": ".b-date-box span:last-child",
+      "attachment_path": ".b-file-box a.file-down-btn",
+
+      "article_ID": "articleNo",
       "duplicate_check_key": "articleNo",
 
       "crawl_timeout": 30,
