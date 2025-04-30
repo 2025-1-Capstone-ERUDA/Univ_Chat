@@ -19,7 +19,7 @@ class ConfigLoader:
             ValueError: JSON 파일에 'url' 또는 'urls' 키가 없음
 
         Returns:
-            list: URL 목록
+            list: URL 정보 목록
         """
         
         # 기본 경로 설정

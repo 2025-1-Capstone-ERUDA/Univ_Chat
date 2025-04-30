@@ -7,7 +7,7 @@ import re
 from crawler_utils import CrawlerUtils
 
 class PostExtractor:
-    def __init__(self, base_url):
+    def __init__(self, base_url: str):
         self.base_url = base_url
 
     def extract_articleID(self, url: str, site: dict) -> str:

@@ -176,3 +176,4 @@ cython_debug/
 # DB
 data/
 test_data/
+tmp/

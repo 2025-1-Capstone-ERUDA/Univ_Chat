@@ -31,7 +31,7 @@ class FileUtils:
         if dir_path is None:
             file_path = os.path.abspath(__file__)
             dir_path = os.path.join(os.path.dirname(file_path), "..", "data")
-        FileManager._ensure_directory(dir_path)
+        FileUtils._ensure_directory(dir_path)
 
         # cutoff 이전 날짜에 만들어진 파일 삭제 cutoff에 만든 파일은 생존
         cutoff = DateUtils.cutoff_date(days_threshold)
@@ -85,6 +85,39 @@ class FileUtils:
         except Exception as e:
             print(f"[경고] CSV 파일 로드 실패: {e}")
             return pd.DataFrame()
+        
+    @staticmethod
+    def merge_dataframes(df1: pd.DataFrame, df2: pd.DataFrame) -> pd.DataFrame:
+        """
+        두 개의 DataFrame을 병합.
+
+        Args:
+            df1 (pd.DataFrame): 첫 번째 DataFrame
+            df2 (pd.DataFrame): 두 번째 DataFrame
+
+        Returns:
+            pd.DataFrame: 병합된 DataFrame
+        """
+        return pd.concat([df1, df2], ignore_index=True)
+    
+    @staticmethod
+    def save_dataframe_to_csv(df: pd.DataFrame, file_path: str = None) -> None:
+        """
+        DataFrame을 CSV 파일로 저장.
+
+        Args:
+            df (pd.DataFrame): 저장할 DataFrame
+            file_path (str): 저장할 CSV 파일 경로
+        """
+        if file_path is None:
+            file_path = os.path.abspath(__file__)
+            file_path = os.path.join(os.path.dirname(file_path), "..", "data", DateUtils.get_timestamp_filename())
+
+        try:
+            df.to_csv(file_path, index=False, encoding="utf-8-sig")
+            print(f"CSV 파일 저장 완료: {file_path}")
+        except Exception as e:
+            print(f"CSV 파일 저장 실패: {e}")
 
 # 테스트용 코드
 if __name__ == "__main__":

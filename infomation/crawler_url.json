@@ -17,10 +17,10 @@
       "content_path": "div.note",
       "writer_path": "div.name",
       "date_path": "div.date",
-      "attachment_path": "dd.file",
+      "attachment_path": "dd.file a",
 
       "article_ID": "BID",
-      "duplicate_check_key": "articleNo",
+      "duplicate_check_key": "article_id",
 
       "crawl_timeout": 30,
       "crawl_delay": 0.5
@@ -45,7 +45,7 @@
       "attachment_path": ".b-file-box a.file-down-btn",
 
       "article_ID": "articleNo",
-      "duplicate_check_key": "articleNo",
+      "duplicate_check_key": "article_id",
 
       "crawl_timeout": 30,
       "crawl_delay": 0.5
@@ -70,7 +70,7 @@
       "attachment_path": ".b-file-box a.file-down-btn",
 
       "article_ID": "articleNo",
-      "duplicate_check_key": "articleNo",
+      "duplicate_check_key": "article_id",
 
       "crawl_timeout": 30,
       "crawl_delay": 0.5
