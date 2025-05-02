@@ -127,7 +127,6 @@ class NoticeCrawler:
                     collected_data_keys.add(current_key) # 새로 수집된 데이터의 키 추가
                     new_post_found = True
                     # print(f"📌 새 게시물 수집 완료: {title} ({full_url})")
-                    print(post_data.get("attachments"))
 
         if new_post_found:
             return newly_collected_posts

@@ -69,6 +69,7 @@ class PostExtractor:
 
             # 게시글 번호 추출
             article_id = self.extract_articleID(post_url, site)
+            # print(f"    🆔 게시물 번호: {article_id}")
 
             return {
                 "title": title,
