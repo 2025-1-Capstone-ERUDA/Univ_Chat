@@ -25,7 +25,7 @@ class CrawlerUtils:
     def make_request(url: str, timeout: int = 30) -> str:
         """
         주어진 URL에 GET 요청을 보내고 응답을 반환합니다.
-        요청이 실패하면 ConnectionError를 발생시킵니다.
+        요청이 실패하거나 인코딩 문제 발생 시 예외를 발생시킵니다.
 
         Args:
             url (str): URL
@@ -35,15 +35,17 @@ class CrawlerUtils:
             ConnectionError: 요청 실패 시 발생
 
         Returns:
-            str: 응답 본문(HTML)
+            str: 응답 본문(HTML, 인코딩 처리 포함)
         """
-        
         try:
             response = requests.get(url, timeout=timeout)
             response.raise_for_status()
+
+            response.encoding = response.apparent_encoding  # 한글 인코딩 처리
             return response.text
         except requests.RequestException as e:
             raise ConnectionError(f"Request failed: {e}")
+
         
     @staticmethod
     def build_paginated_url(base_url: str, site: dict) -> str:
