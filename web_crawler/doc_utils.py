@@ -4,6 +4,9 @@
 # 적절하게 import 문 추가
 import os
 import re
+from PIL import Image
+import easyocr
+import numpy as np
 import requests
 from urllib.parse import unquote
 
@@ -61,7 +64,28 @@ class AttachmentProcessor:
     def hwpx_extractor(self, file_path: str) -> str:
         """HWPX 파일에서 텍스트를 추출합니다."""
         return "hwpx text"
+    
+    def image_extractor(self, file_path: str) -> str:
+        """이미지 파일에서 텍스트를 추출합니다."""
+        
+        if not os.path.exists(file_path):
+            return f"[❌ 이미지 파일이 존재하지 않습니다: {file_path}]"
 
+        # 이미지 파일 열기
+        try:
+            image = Image.open(file_path).convert("RGB")
+            image_np = np.array(image)
+        except Exception as e:
+            return f"[❌ 이미지 열기 실패: {e}]"
+
+        # easyocr로 텍스트 추출
+        try:
+            reader = easyocr.Reader(['ko', 'en'], gpu=False)
+            results = reader.readtext(image_np, detail=0)
+            return "\n".join(results).strip()
+        except Exception as e:
+            return f"[❌ easyocr 텍스트 추출 실패: {e}]"
+        
     def extract_text(self, file_path):
         _, ext = os.path.splitext(file_path)
         ext = ext.lower()
@@ -85,6 +109,10 @@ class AttachmentProcessor:
             
             elif ext == ".hwpx":
                 text = self.hwpx_extractor(file_path)
+                return text
+            
+            elif ext == '.jpg' or ext == '.jpeg' or ext == '.png':
+                text = self.image_extractor(file_path)
                 return text
 
             else:
@@ -116,18 +144,18 @@ if __name__ == "__main__":
     pdf_url = "https://cse.kangwon.ac.kr/cse/community/undergraduate-notice.do?mode=download&articleNo=516526&attachNo=539615"
     docx_url = ""
     txt_url = ""
-    jpg_url = ""
+    image_url = "https://cse.kangwon.ac.kr/cse/community/undergraduate-notice.do?mode=download&articleNo=441793&attachNo=484103"
     error_url = "https://cse.kangwon.ac.kr/cse/community/undergraduate-notice.do?mode=download&articleNo=364536&attachNo=367495"
     
     test_urls = [
-        hwp_url,
+        # hwp_url,
         # hwpx_url,
-        xlsx_url,
-        pdf_url,
+        # xlsx_url,
+        # pdf_url,
         # docx_url,
         # txt_url,
-        # jpg_url,
-        error_url
+        image_url,
+        # error_url
     ]
 
     processor = AttachmentProcessor()

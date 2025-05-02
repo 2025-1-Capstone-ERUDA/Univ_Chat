@@ -1,31 +1,6 @@
 {
   "urls": [
     {
-      "url": "https://knuch.or.kr/bbs/board.php?tbl=bbs21&&category=&findType=&findWord=&sort1=&sort2=&it_id=&shop_flag=&mobile_flag=&page=1",
-      "description": "강원대 총학생회 공지사항",
-      "university": "강원대학교",
-      "department": "총학생회",
-      "category": "공지사항",
-
-      "page_id": "page",
-      "page_start": 1,
-      "page_offset": 1,
-
-      "board_path": "ul.img_li li a",
-
-      "title_path": "div.tit_box p",
-      "content_path": "div.view_box",
-      "writer_path": "div.name",
-      "date_path": "div.tit_box span",
-      "attachment_path": "div.file_box ul",
-
-      "article_ID": "num",
-      "duplicate_check_key": "article_id",
-
-      "crawl_timeout": 30,
-      "crawl_delay": 0.5
-    },
-    {
       "url": "https://health.kangwon.ac.kr/index.php?mt=page&mp=4_1&mm=oxbbs&oxid=1&key=&val=&subcmd=&CAT_ID=0&artpp=15&cpage=1",
       "description": "강원대 보건진료소 공지",
       "university": "강원대학교",
