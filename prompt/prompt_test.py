@@ -26,7 +26,7 @@ if __name__ == "__main__":
     embedding_prompt = PromptTemplate(prompts["embedding_prompt"])
 
     # 사용자 입력
-    user_query = "2025학년도 강원대학교 컴퓨터공학과 졸업요건이 어떻게 되나요?"
+    user_query = "2025학년도 컴퓨터공학과 졸업요건이 어떻게 되나요?"
 
     # 템플릿 채우기
     prompt_text = embedding_prompt.format(user_query=user_query)
