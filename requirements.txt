@@ -69,6 +69,7 @@ networkx==3.4.2
 ninja==1.11.1.4
 nltk==3.9.1
 numpy==2.2.4
+olefile==0.47
 openai==1.76.2
 opencv-python-headless==4.11.0.86
 packaging==25.0
