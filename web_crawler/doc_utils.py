@@ -4,6 +4,9 @@
 # 적절하게 import 문 추가
 import os
 import re
+import olefile
+import zipfile
+import xml.etree.ElementTree as ET
 from PIL import Image
 import easyocr
 import numpy as np
@@ -59,11 +62,38 @@ class AttachmentProcessor:
     
     def hwp_extractor(self, file_path: str) -> str:
         """HWP 파일에서 텍스트를 추출합니다."""
-        return "hwp text"
+        if not olefile.isOleFile(file_path):
+            raise ValueError("올바른 HWP 파일이 아닙니다.")
+
+        with olefile.OleFileIO(file_path) as ole:
+            if not ole.exists('PrvText'):
+                raise ValueError("텍스트 스트림(PrvText)을 찾을 수 없습니다.")
+        
+            with ole.openstream('PrvText') as stream:
+                text_bytes = stream.read()
+                text = text_bytes.decode('utf-16', errors='ignore')
+                return text
     
     def hwpx_extractor(self, file_path: str) -> str:
         """HWPX 파일에서 텍스트를 추출합니다."""
-        return "hwpx text"
+        text_output = []
+
+        # .hwpx는 ZIP 형식이므로 압축 해제
+        with zipfile.ZipFile(file_path, 'r') as zip_file:
+            # 'Contents/section*.xml' 파일에서 텍스트를 추출
+            section_files = [name for name in zip_file.namelist() if name.startswith("Contents/section") and name.endswith(".xml")]
+            for section_file in sorted(section_files):
+                with zip_file.open(section_file) as file:
+                    tree = ET.parse(file)
+                    root = tree.getroot()
+
+                    # 'w:t' 요소에서 텍스트 추출
+                    for elem in root.iter():
+                        if 't' in elem.tag:  # 태그 이름에 't'가 포함된 경우
+                            if elem.text:
+                                text_output.append(elem.text)
+
+        return '\n'.join(text_output)
     
     def image_extractor(self, file_path: str) -> str:
         """이미지 파일에서 텍스트를 추출합니다."""
@@ -146,15 +176,18 @@ if __name__ == "__main__":
     txt_url = ""
     image_url = "https://cse.kangwon.ac.kr/cse/community/undergraduate-notice.do?mode=download&articleNo=441793&attachNo=484103"
     error_url = "https://cse.kangwon.ac.kr/cse/community/undergraduate-notice.do?mode=download&articleNo=364536&attachNo=367495"
+    hwp_url = "https://cse.kangwon.ac.kr/cse/community/undergraduate-notice.do?mode=download&articleNo=501724&attachNo=537931"
+    hwpx_url = "https://account.kangwon.ac.kr/account/community/notice.do?mode=download&articleNo=515279&attachNo=539600"
+
     
     test_urls = [
-        # hwp_url,
-        # hwpx_url,
+        hwp_url,
+        hwpx_url,
         # xlsx_url,
         # pdf_url,
         # docx_url,
         # txt_url,
-        image_url,
+        # image_url,
         # error_url
     ]
 
@@ -162,4 +195,8 @@ if __name__ == "__main__":
     results = processor.process_attachments(test_urls)
 
     for url, text in results.items():
-        print(f"URL: {url}\n텍스트: {text}\n")
+        print(f"URL: {url}\n텍스트: {text[:100]}\n")
+        # 텍스트 전문 확인용
+        with open("extracted_text.txt", "a", encoding="utf-8") as f:
+            f.write(text + "\n")
+            f.write("="*50 + "\n")
