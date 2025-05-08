@@ -1,6 +1,2221 @@
 {
   "urls": [
     {
+      "url": "https://nurse.kangwon.ac.kr/nurse/community/notice01.do",
+      "description": "강원대 간호학과 학사공지",
+      "university": "강원대학교 간호대학",
+      "department": "간호학과",
+      "category": "학부 공지사항",
+
+      "page_id": "article.offset",
+      "page_start": 0,
+      "page_offset": 10,
+
+      "board_path": "div.b-title-box a",
+
+      "title_path": ".b-title-box span:not([class])",
+      "content_path": "div.b-content-box div.fr-view",
+      "writer_path": ".b-writer-box span:last-child",
+      "date_path": ".b-date-box span:last-child",
+      "attachment_path": ".b-file-box a.file-down-btn",
+
+      "article_ID": "articleNo",
+      "duplicate_check_key": "article_id",
+
+      "crawl_timeout": 30,
+      "crawl_delay": 0.5
+    },
+
+    {
+      "url": "https://biz.kangwon.ac.kr/biz/community/notice.do",
+      "description": "강원대 경영・회계학부 경영학전공 학사공지",
+      "university": "강원대학교 경영대학",
+      "department": "경영・회계학부 경영학전공",
+      "category": "학부 공지사항",
+
+      "page_id": "article.offset",
+      "page_start": 0,
+      "page_offset": 10,
+
+      "board_path": "div.b-title-box a",
+
+      "title_path": ".b-title-box span:not([class])",
+      "content_path": "div.b-content-box div.fr-view",
+      "writer_path": ".b-writer-box span:last-child",
+      "date_path": ".b-date-box span:last-child",
+      "attachment_path": ".b-file-box a.file-down-btn",
+
+      "article_ID": "articleNo",
+      "duplicate_check_key": "article_id",
+
+      "crawl_timeout": 30,
+      "crawl_delay": 0.5
+    },
+    {
+      "url": "https://account.kangwon.ac.kr/account/community/notice.do",
+      "description": "강원대 경영・회계학부 회계학전공 학사공지",
+      "university": "강원대학교 경영대학",
+      "department": "경영・회계학부 회계학전공",
+      "category": "학부 공지사항",
+
+      "page_id": "article.offset",
+      "page_start": 0,
+      "page_offset": 10,
+
+      "board_path": "div.b-title-box a",
+
+      "title_path": ".b-title-box span:not([class])",
+      "content_path": "div.b-content-box div.fr-view",
+      "writer_path": ".b-writer-box span:last-child",
+      "date_path": ".b-date-box span:last-child",
+      "attachment_path": ".b-file-box a.file-down-btn",
+
+      "article_ID": "articleNo",
+      "duplicate_check_key": "article_id",
+
+      "crawl_timeout": 30,
+      "crawl_delay": 0.5
+    },
+    {
+      "url": "https://economics.kangwon.ac.kr/economics/community/notice.do",
+      "description": "강원대 경제・정보통계학부 경제학전공 학사공지",
+      "university": "강원대학교 경영대학",
+      "department": "경제・정보통계학부 경제학전공",
+      "category": "학부 공지사항",
+
+      "page_id": "article.offset",
+      "page_start": 0,
+      "page_offset": 10,
+
+      "board_path": "div.b-title-box a",
+
+      "title_path": ".b-title-box span:not([class])",
+      "content_path": "div.b-content-box div.fr-view",
+      "writer_path": ".b-writer-box span:last-child",
+      "date_path": ".b-date-box span:last-child",
+      "attachment_path": ".b-file-box a.file-down-btn",
+
+      "article_ID": "articleNo",
+      "duplicate_check_key": "article_id",
+
+      "crawl_timeout": 30,
+      "crawl_delay": 0.5
+    },
+    {
+      "url": "https://statistics.kangwon.ac.kr/statistics/community/notice.do",
+      "description": "강원대 경제・정보통계학부 정보통계학전공 학사공지",
+      "university": "강원대학교 경영대학",
+      "department": "경제・정보통계학부 정보통계학전공",
+      "category": "학부 공지사항",
+
+      "page_id": "article.offset",
+      "page_start": 0,
+      "page_offset": 10,
+
+      "board_path": "div.b-title-box a",
+
+      "title_path": ".b-title-box span:not([class])",
+      "content_path": "div.b-content-box div.fr-view",
+      "writer_path": ".b-writer-box span:last-child",
+      "date_path": ".b-date-box span:last-child",
+      "attachment_path": ".b-file-box a.file-down-btn",
+
+      "article_ID": "articleNo",
+      "duplicate_check_key": "article_id",
+
+      "crawl_timeout": 30,
+      "crawl_delay": 0.5
+    },
+    {
+      "url": "https://tourism.kangwon.ac.kr/tourism/community/notice.do",
+      "description": "강원대 관광경영학과 학사공지",
+      "university": "강원대학교 경영대학",
+      "department": "관광경영학과",
+      "category": "학부 공지사항",
+
+      "page_id": "article.offset",
+      "page_start": 0,
+      "page_offset": 10,
+
+      "board_path": "div.b-title-box a",
+
+      "title_path": ".b-title-box span:not([class])",
+      "content_path": "div.b-content-box div.fr-view",
+      "writer_path": ".b-writer-box span:last-child",
+      "date_path": ".b-date-box span:last-child",
+      "attachment_path": ".b-file-box a.file-down-btn",
+
+      "article_ID": "articleNo",
+      "duplicate_check_key": "article_id",
+
+      "crawl_timeout": 30,
+      "crawl_delay": 0.5
+    },
+    {
+      "url": "https://itb.kangwon.ac.kr/trade/community/notice.do",
+      "description": "강원대 국제무역학과 학사공지",
+      "university": "강원대학교 경영대학",
+      "department": "국제무역학과",
+      "category": "학부 공지사항",
+
+      "page_id": "article.offset",
+      "page_start": 0,
+      "page_offset": 10,
+
+      "board_path": "div.b-title-box a",
+
+      "title_path": ".b-title-box span:not([class])",
+      "content_path": "div.b-content-box div.fr-view",
+      "writer_path": ".b-writer-box span:last-child",
+      "date_path": ".b-date-box span:last-child",
+      "attachment_path": ".b-file-box a.file-down-btn",
+
+      "article_ID": "articleNo",
+      "duplicate_check_key": "article_id",
+
+      "crawl_timeout": 30,
+      "crawl_delay": 0.5
+    },
+
+    {
+      "url": "https://cll.kangwon.ac.kr/cll/community/notice.do",
+      "description": "강원대 스마트팜농산업학과 학사공지",
+      "university": "강원대학교 농업생명과학대학",
+      "department": "스마트팜농산업학과",
+      "category": "학부 공지사항",
+
+      "page_id": "article.offset",
+      "page_start": 0,
+      "page_offset": 10,
+
+      "board_path": "div.b-title-box a",
+
+      "title_path": ".b-title-box span:not([class])",
+      "content_path": "div.b-content-box div.fr-view",
+      "writer_path": ".b-writer-box span:last-child",
+      "date_path": ".b-date-box span:last-child",
+      "attachment_path": ".b-file-box a.file-down-btn",
+
+      "article_ID": "articleNo",
+      "duplicate_check_key": "article_id",
+
+      "crawl_timeout": 30,
+      "crawl_delay": 0.5
+    },
+    {
+      "url": "https://bse.kangwon.ac.kr/bse/community/bachelor-notice.do",
+      "description": "강원대 스마트팜융합바이오시스템공학과 학사공지",
+      "university": "강원대학교 농업생명과학대학",
+      "department": "스마트팜융합바이오시스템공학과",
+      "category": "학부 공지사항",
+
+      "page_id": "article.offset",
+      "page_start": 0,
+      "page_offset": 10,
+
+      "board_path": "div.b-title-box a",
+
+      "title_path": ".b-title-box span:not([class])",
+      "content_path": "div.b-content-box div.fr-view",
+      "writer_path": ".b-writer-box span:last-child",
+      "date_path": ".b-date-box span:last-child",
+      "attachment_path": ".b-file-box a.file-down-btn",
+
+      "article_ID": "articleNo",
+      "duplicate_check_key": "article_id",
+
+      "crawl_timeout": 30,
+      "crawl_delay": 0.5
+    },
+    {
+      "url": "https://foodtech.kangwon.ac.kr/foodtech/community/notice.do",
+      "description": "강원대 식품생명공학과 학사공지",
+      "university": "강원대학교 농업생명과학대학",
+      "department": "식품생명공학과",
+      "category": "학부 공지사항",
+
+      "page_id": "article.offset",
+      "page_start": 0,
+      "page_offset": 10,
+
+      "board_path": "div.b-title-box a",
+
+      "title_path": ".b-title-box span:not([class])",
+      "content_path": "div.b-content-box div.fr-view",
+      "writer_path": ".b-writer-box span:last-child",
+      "date_path": ".b-date-box span:last-child",
+      "attachment_path": ".b-file-box a.file-down-btn",
+
+      "article_ID": "articleNo",
+      "duplicate_check_key": "article_id",
+
+      "crawl_timeout": 30,
+      "crawl_delay": 0.5
+    },
+    {
+      "url": "https://appliedplant.kangwon.ac.kr/appliedplant/community/undergraduate-notice.do",
+      "description": "강원대 생물자원과학부 식물자원응용과학전공 학사공지",
+      "university": "강원대학교 농업생명과학대학",
+      "department": "생물자원과학부 식물자원응용과학전공",
+      "category": "학부 공지사항",
+
+      "page_id": "article.offset",
+      "page_start": 0,
+      "page_offset": 10,
+
+      "board_path": "div.b-title-box a",
+
+      "title_path": ".b-title-box span:not([class])",
+      "content_path": "div.b-content-box div.fr-view",
+      "writer_path": ".b-writer-box span:last-child",
+      "date_path": ".b-date-box span:last-child",
+      "attachment_path": ".b-file-box a.file-down-btn",
+
+      "article_ID": "articleNo",
+      "duplicate_check_key": "article_id",
+
+      "crawl_timeout": 30,
+      "crawl_delay": 0.5
+    },
+    {
+      "url": "https://plantmedicine.kangwon.ac.kr/applybio/community/under-notice.do",
+      "description": "강원대 생물자원과학부 식물의학전공 학사공지",
+      "university": "강원대학교 농업생명과학대학",
+      "department": "생물자원과학부 식물의학전공",
+      "category": "학부 공지사항",
+
+      "page_id": "article.offset",
+      "page_start": 0,
+      "page_offset": 10,
+
+      "board_path": "div.b-title-box a",
+
+      "title_path": ".b-title-box span:not([class])",
+      "content_path": "div.b-content-box div.fr-view",
+      "writer_path": ".b-writer-box span:last-child",
+      "date_path": ".b-date-box span:last-child",
+      "attachment_path": ".b-file-box a.file-down-btn",
+
+      "article_ID": "articleNo",
+      "duplicate_check_key": "article_id",
+
+      "crawl_timeout": 30,
+      "crawl_delay": 0.5
+    },
+    {
+      "url": "https://agecon.kangwon.ac.kr/agecon/community/notice.do",
+      "description": "강원대 원예・농업자원경제학부 농업자원경제학전공 학사공지",
+      "university": "강원대학교 농업생명과학대학",
+      "department": "원예・농업자원경제학부 농업자원경제학전공",
+      "category": "학부 공지사항",
+
+      "page_id": "article.offset",
+      "page_start": 0,
+      "page_offset": 10,
+
+      "board_path": "div.b-title-box a",
+
+      "title_path": ".b-title-box span:not([class])",
+      "content_path": "div.b-content-box div.fr-view",
+      "writer_path": ".b-writer-box span:last-child",
+      "date_path": ".b-date-box span:last-child",
+      "attachment_path": ".b-file-box a.file-down-btn",
+
+      "article_ID": "articleNo",
+      "duplicate_check_key": "article_id",
+
+      "crawl_timeout": 30,
+      "crawl_delay": 0.5
+    },
+    {
+      "url": "https://horti.kangwon.ac.kr/horti/community/dept-notice.do",
+      "description": "강원대 원예・농업자원경제학부 원예과학전공 학사공지",
+      "university": "강원대학교 농업생명과학대학",
+      "department": "원예・농업자원경제학부 원예과학전공",
+      "category": "학부 공지사항",
+
+      "page_id": "article.offset",
+      "page_start": 0,
+      "page_offset": 10,
+
+      "board_path": "div.b-title-box a",
+
+      "title_path": ".b-title-box span:not([class])",
+      "content_path": "div.b-content-box div.fr-view",
+      "writer_path": ".b-writer-box span:last-child",
+      "date_path": ".b-date-box span:last-child",
+      "attachment_path": ".b-file-box a.file-down-btn",
+
+      "article_ID": "articleNo",
+      "duplicate_check_key": "article_id",
+
+      "crawl_timeout": 30,
+      "crawl_delay": 0.5
+    },
+    {
+      "url": "https://aed.kangwon.ac.kr/aed/community/notice.do",
+      "description": "강원대 지역건설공학과 학사공지",
+      "university": "강원대학교 농업생명과학대학",
+      "department": "지역건설공학과",
+      "category": "학부 공지사항",
+
+      "page_id": "article.offset",
+      "page_start": 0,
+      "page_offset": 10,
+
+      "board_path": "div.b-title-box a",
+
+      "title_path": ".b-title-box span:not([class])",
+      "content_path": "div.b-content-box div.fr-view",
+      "writer_path": ".b-writer-box span:last-child",
+      "date_path": ".b-date-box span:last-child",
+      "attachment_path": ".b-file-box a.file-down-btn",
+
+      "article_ID": "articleNo",
+      "duplicate_check_key": "article_id",
+
+      "crawl_timeout": 30,
+      "crawl_delay": 0.5
+    },
+    {
+      "url": "https://dbe.kangwon.ac.kr/dbe/community/notice.do",
+      "description": "강원대 환경융합학부 바이오자원환경학전공 학사공지",
+      "university": "강원대학교 농업생명과학대학",
+      "department": "환경융합학부 바이오자원환경학전공",
+      "category": "학부 공지사항",
+
+      "page_id": "article.offset",
+      "page_start": 0,
+      "page_offset": 10,
+
+      "board_path": "div.b-title-box a",
+
+      "title_path": ".b-title-box span:not([class])",
+      "content_path": "div.b-content-box div.fr-view",
+      "writer_path": ".b-writer-box span:last-child",
+      "date_path": ".b-date-box span:last-child",
+      "attachment_path": ".b-file-box a.file-down-btn",
+
+      "article_ID": "articleNo",
+      "duplicate_check_key": "article_id",
+
+      "crawl_timeout": 30,
+      "crawl_delay": 0.5
+    },
+    {
+      "url": "https://ecoenv.kangwon.ac.kr/ecoenv/community/notice.do",
+      "description": "강원대 환경융합학부 에코환경과학전공 학사공지",
+      "university": "강원대학교 농업생명과학대학",
+      "department": "환경융합학부 에코환경과학전공",
+      "category": "학부 공지사항",
+
+      "page_id": "article.offset",
+      "page_start": 0,
+      "page_offset": 10,
+
+      "board_path": "div.b-title-box a",
+
+      "title_path": ".b-title-box span:not([class])",
+      "content_path": "div.b-content-box div.fr-view",
+      "writer_path": ".b-writer-box span:last-child",
+      "date_path": ".b-date-box span:last-child",
+      "attachment_path": ".b-file-box a.file-down-btn",
+
+      "article_ID": "articleNo",
+      "duplicate_check_key": "article_id",
+
+      "crawl_timeout": 30,
+      "crawl_delay": 0.5
+    },
+
+    {
+      "url": "https://animal.kangwon.ac.kr/animal/community/notice.do",
+      "description": "강원대 동물산업융합학과 학사공지",
+      "university": "강원대학교 동물생명과학대학",
+      "department": "동물산업융합학과",
+      "category": "학부 공지사항",
+
+      "page_id": "article.offset",
+      "page_start": 0,
+      "page_offset": 10,
+
+      "board_path": "div.b-title-box a",
+
+      "title_path": ".b-title-box span:not([class])",
+      "content_path": "div.b-content-box div.fr-view",
+      "writer_path": ".b-writer-box span:last-child",
+      "date_path": ".b-date-box span:last-child",
+      "attachment_path": ".b-file-box a.file-down-btn",
+
+      "article_ID": "articleNo",
+      "duplicate_check_key": "article_id",
+
+      "crawl_timeout": 30,
+      "crawl_delay": 0.5
+    },
+    {
+      "url": "https://applanimalsci.kangwon.ac.kr/applanimalsci/community/notice.do",
+      "description": "강원대 동물응용과학과 학사공지",
+      "university": "강원대학교 동물생명과학대학",
+      "department": "동물응용과학과",
+      "category": "학부 공지사항",
+
+      "page_id": "article.offset",
+      "page_start": 0,
+      "page_offset": 10,
+
+      "board_path": "div.b-title-box a",
+
+      "title_path": ".b-title-box span:not([class])",
+      "content_path": "div.b-content-box div.fr-view",
+      "writer_path": ".b-writer-box span:last-child",
+      "date_path": ".b-date-box span:last-child",
+      "attachment_path": ".b-file-box a.file-down-btn",
+
+      "article_ID": "articleNo",
+      "duplicate_check_key": "article_id",
+
+      "crawl_timeout": 30,
+      "crawl_delay": 0.5
+    },
+    {
+      "url": "https://aniscience.kangwon.ac.kr/aniscience/community/notice.do",
+      "description": "강원대 동물자원과학과 학사공지",
+      "university": "강원대학교 동물생명과학대학",
+      "department": "동물자원과학과",
+      "category": "학부 공지사항",
+
+      "page_id": "article.offset",
+      "page_start": 0,
+      "page_offset": 10,
+
+      "board_path": "div.b-title-box a",
+
+      "title_path": ".b-title-box span:not([class])",
+      "content_path": "div.b-content-box div.fr-view",
+      "writer_path": ".b-writer-box span:last-child",
+      "date_path": ".b-date-box span:last-child",
+      "attachment_path": ".b-file-box a.file-down-btn",
+
+      "article_ID": "articleNo",
+      "duplicate_check_key": "article_id",
+
+      "crawl_timeout": 30,
+      "crawl_delay": 0.5
+    },
+
+    {
+      "url": "https://architecture.kangwon.ac.kr/architecture/community/notice.do",
+      "description": "강원대 건축학과(5년제) 학사공지",
+      "university": "강원대학교 문화예술・공과대학",
+      "department": "건축학과(5년제)",
+      "category": "학부 공지사항",
+
+      "page_id": "article.offset",
+      "page_start": 0,
+      "page_offset": 10,
+
+      "board_path": "div.b-title-box a",
+
+      "title_path": ".b-title-box span:not([class])",
+      "content_path": "div.b-content-box div.fr-view",
+      "writer_path": ".b-writer-box span:last-child",
+      "date_path": ".b-date-box span:last-child",
+      "attachment_path": ".b-file-box a.file-down-btn",
+
+      "article_ID": "articleNo",
+      "duplicate_check_key": "article_id",
+
+      "crawl_timeout": 30,
+      "crawl_delay": 0.5
+    },
+    {
+      "url": "https://archi.kangwon.ac.kr/archi/community/notice01.do",
+      "description": "강원대 건축・토목・환경공학부 건축공학전공 학사공지",
+      "university": "강원대학교 문화예술・공과대학",
+      "department": "건축・토목・환경공학부 건축공학전공",
+      "category": "학부 공지사항",
+
+      "page_id": "article.offset",
+      "page_start": 0,
+      "page_offset": 10,
+
+      "board_path": "div.b-title-box a",
+
+      "title_path": ".b-title-box span:not([class])",
+      "content_path": "div.b-content-box div.fr-view",
+      "writer_path": ".b-writer-box span:last-child",
+      "date_path": ".b-date-box span:last-child",
+      "attachment_path": ".b-file-box a.file-down-btn",
+
+      "article_ID": "articleNo",
+      "duplicate_check_key": "article_id",
+
+      "crawl_timeout": 30,
+      "crawl_delay": 0.5
+    },
+    {
+      "url": "https://civil.kangwon.ac.kr/civil/community/notice.do",
+      "description": "강원대 건축・토목・환경공학부 토목학전공 학사공지",
+      "university": "강원대학교 문화예술・공과대학",
+      "department": "건축・토목・환경공학부 토목학전공",
+      "category": "학부 공지사항",
+
+      "page_id": "article.offset",
+      "page_start": 0,
+      "page_offset": 10,
+
+      "board_path": "div.b-title-box a",
+
+      "title_path": ".b-title-box span:not([class])",
+      "content_path": "div.b-content-box div.fr-view",
+      "writer_path": ".b-writer-box span:last-child",
+      "date_path": ".b-date-box span:last-child",
+      "attachment_path": ".b-file-box a.file-down-btn",
+
+      "article_ID": "articleNo",
+      "duplicate_check_key": "article_id",
+
+      "crawl_timeout": 30,
+      "crawl_delay": 0.5
+    },
+    {
+      "url": "https://environ.kangwon.ac.kr/environ/community/notice.do",
+      "description": "강원대 건축・토목・환경공학부 환경공학전공 학사공지",
+      "university": "강원대학교 문화예술・공과대학",
+      "department": "건축・토목・환경공학부 환경공학전공",
+      "category": "학부 공지사항",
+
+      "page_id": "article.offset",
+      "page_start": 0,
+      "page_offset": 10,
+
+      "board_path": "div.b-title-box a",
+
+      "title_path": ".b-title-box span:not([class])",
+      "content_path": "div.b-content-box div.fr-view",
+      "writer_path": ".b-writer-box span:last-child",
+      "date_path": ".b-date-box span:last-child",
+      "attachment_path": ".b-file-box a.file-down-btn",
+
+      "article_ID": "articleNo",
+      "duplicate_check_key": "article_id",
+
+      "crawl_timeout": 30,
+      "crawl_delay": 0.5
+    },
+    {
+      "url": "https://battery.kangwon.ac.kr/battery/community/notice.do",
+      "description": "강원대 배터리융합공학과 학사공지",
+      "university": "강원대학교 문화예술・공과대학",
+      "department": "배터리융합공학과",
+      "category": "학부 공지사항",
+
+      "page_id": "article.offset",
+      "page_start": 0,
+      "page_offset": 10,
+
+      "board_path": "div.b-title-box a",
+
+      "title_path": ".b-title-box span:not([class])",
+      "content_path": "div.b-content-box div.fr-view",
+      "writer_path": ".b-writer-box span:last-child",
+      "date_path": ".b-date-box span:last-child",
+      "attachment_path": ".b-file-box a.file-down-btn",
+
+      "article_ID": "articleNo",
+      "duplicate_check_key": "article_id",
+
+      "crawl_timeout": 30,
+      "crawl_delay": 0.5
+    },
+    {
+      "url": "https://ie.kangwon.ac.kr/sme/community/notice.do",
+      "description": "강원대 스마트산업공학과 학사공지",
+      "university": "강원대학교 문화예술・공과대학",
+      "department": "스마트산업공학과",
+      "category": "학부 공지사항",
+
+      "page_id": "article.offset",
+      "page_start": 0,
+      "page_offset": 10,
+
+      "board_path": "div.b-title-box a",
+
+      "title_path": ".b-title-box span:not([class])",
+      "content_path": "div.b-content-box div.fr-view",
+      "writer_path": ".b-writer-box span:last-child",
+      "date_path": ".b-date-box span:last-child",
+      "attachment_path": ".b-file-box a.file-down-btn",
+
+      "article_ID": "articleNo",
+      "duplicate_check_key": "article_id",
+
+      "crawl_timeout": 30,
+      "crawl_delay": 0.5
+    },
+    {
+      "url": "https://enre.kangwon.ac.kr/enre/community/notice.do",
+      "description": "강원대 에너지자원공학과 학사공지",
+      "university": "강원대학교 문화예술・공과대학",
+      "department": "에너지자원공학과",
+      "category": "학부 공지사항",
+
+      "page_id": "article.offset",
+      "page_start": 0,
+      "page_offset": 10,
+
+      "board_path": "div.b-title-box a",
+
+      "title_path": ".b-title-box span:not([class])",
+      "content_path": "div.b-content-box div.fr-view",
+      "writer_path": ".b-writer-box span:last-child",
+      "date_path": ".b-date-box span:last-child",
+      "attachment_path": ".b-file-box a.file-down-btn",
+
+      "article_ID": "articleNo",
+      "duplicate_check_key": "article_id",
+
+      "crawl_timeout": 30,
+      "crawl_delay": 0.5
+    },
+    {
+      "url": "https://bioeng.kangwon.ac.kr/bioeng/community/notice01.do",
+      "description": "강원대 화공・생물공학부 생물학전공 학사공지",
+      "university": "강원대학교 문화예술・공과대학",
+      "department": "화공・생물공학부 생물학전공",
+      "category": "학부 공지사항",
+
+      "page_id": "article.offset",
+      "page_start": 0,
+      "page_offset": 10,
+
+      "board_path": "div.b-title-box a",
+
+      "title_path": ".b-title-box span:not([class])",
+      "content_path": "div.b-content-box div.fr-view",
+      "writer_path": ".b-writer-box span:last-child",
+      "date_path": ".b-date-box span:last-child",
+      "attachment_path": ".b-file-box a.file-down-btn",
+      "article_ID": "articleNo",
+      "duplicate_check_key": "article_id",
+
+      "crawl_timeout": 30,
+      "crawl_delay": 0.5
+    },
+    {
+      "url": "https://chemeng.kangwon.ac.kr/chemeng/notice/notice.do",
+      "description": "강원대 화공・생물공학부 화학공학전공 학사공지",
+      "university": "강원대학교 문화예술・공과대학",
+      "department": "화공・생물공학부 화학공학전공",
+      "category": "학부 공지사항",
+
+      "page_id": "article.offset",
+      "page_start": 0,
+      "page_offset": 10,
+
+      "board_path": "div.b-title-box a",
+
+      "title_path": ".b-title-box span:not([class])",
+      "content_path": "div.b-content-box div.fr-view",
+      "writer_path": ".b-writer-box span:last-child",
+      "date_path": ".b-date-box span:last-child",
+      "attachment_path": ".b-file-box a.file-down-btn",
+
+      "article_ID": "articleNo",
+      "duplicate_check_key": "article_id",
+
+      "crawl_timeout": 30,
+      "crawl_delay": 0.5
+    },
+    {
+      "url": "https://vculture.kangwon.ac.kr/vculture/community/notice.do",
+      "description": "강원대 영상문화학과 학사공지",
+      "university": "강원대학교 문화예술・공과대학",
+      "department": "영상문화학과",
+      "category": "학부 공지사항",
+
+      "page_id": "article.offset",
+      "page_start": 0,
+      "page_offset": 10,
+
+      "board_path": "div.b-title-box a",
+
+      "title_path": ".b-title-box span:not([class])",
+      "content_path": "div.b-content-box div.fr-view",
+      "writer_path": ".b-writer-box span:last-child",
+      "date_path": ".b-date-box span:last-child",
+      "attachment_path": ".b-file-box a.file-down-btn",
+
+      "article_ID": "articleNo",
+      "duplicate_check_key": "article_id",
+
+      "crawl_timeout": 30,
+      "crawl_delay": 0.5
+    },
+    {
+      "url": "https://design.kangwon.ac.kr/design/community/notice.do",
+      "description": "강원대 디자인학과 학사공지",
+      "university": "강원대학교 문화예술・공과대학",
+      "department": "디자인학과",
+      "category": "학부 공지사항",
+
+      "page_id": "article.offset",
+      "page_start": 0,
+      "page_offset": 10,
+
+      "board_path": "div.b-title-box a",
+
+      "title_path": ".b-title-box span:not([class])",
+      "content_path": "div.b-content-box div.fr-view",
+      "writer_path": ".b-writer-box span:last-child",
+      "date_path": ".b-date-box span:last-child",
+      "attachment_path": ".b-file-box a.file-down-btn",
+
+      "article_ID": "articleNo",
+      "duplicate_check_key": "article_id",
+
+      "crawl_timeout": 30,
+      "crawl_delay": 0.5
+    },
+    {
+      "url": "https://dance.kangwon.ac.kr/dance/community/notice.do",
+      "description": "강원대 무용학과 학사공지",
+      "university": "강원대학교 문화예술・공과대학",
+      "department": "무용학과",
+      "category": "학부 공지사항",
+
+      "page_id": "article.offset",
+      "page_start": 0,
+      "page_offset": 10,
+
+      "board_path": "div.b-title-box a",
+
+      "title_path": ".b-title-box span:not([class])",
+      "content_path": "div.b-content-box div.fr-view",
+      "writer_path": ".b-writer-box span:last-child",
+      "date_path": ".b-date-box span:last-child",
+      "attachment_path": ".b-file-box a.file-down-btn",
+
+      "article_ID": "articleNo",
+      "duplicate_check_key": "article_id",
+
+      "crawl_timeout": 30,
+      "crawl_delay": 0.5
+    },
+    {
+      "url": "https://art.kangwon.ac.kr/art/community/notice.do",
+      "description": "강원대 미술학과 학사공지",
+      "university": "강원대학교 문화예술・공과대학",
+      "department": "미술학과",
+      "category": "학부 공지사항",
+
+      "page_id": "article.offset",
+      "page_start": 0,
+      "page_offset": 10,
+
+      "board_path": "div.b-title-box a",
+
+      "title_path": ".b-title-box span:not([class])",
+      "content_path": "div.b-content-box div.fr-view",
+      "writer_path": ".b-writer-box span:last-child",
+      "date_path": ".b-date-box span:last-child",
+      "attachment_path": ".b-file-box a.file-down-btn",
+
+      "article_ID": "articleNo",
+      "duplicate_check_key": "article_id",
+
+      "crawl_timeout": 30,
+      "crawl_delay": 0.5
+    },
+    {
+      "url": "https://sport.kangwon.ac.kr/sport/community/notice.do",
+      "description": "강원대 스포츠과학과 학사공지",
+      "university": "강원대학교 문화예술・공과대학",
+      "department": "스포츠과학과",
+      "category": "학부 공지사항",
+
+      "page_id": "article.offset",
+      "page_start": 0,
+      "page_offset": 10,
+
+      "board_path": "div.b-title-box a",
+
+      "title_path": ".b-title-box span:not([class])",
+      "content_path": "div.b-content-box div.fr-view",
+      "writer_path": ".b-writer-box span:last-child",
+      "date_path": ".b-date-box span:last-child",
+      "attachment_path": ".b-file-box a.file-down-btn",
+
+      "article_ID": "articleNo",
+      "duplicate_check_key": "article_id",
+
+      "crawl_timeout": 30,
+      "crawl_delay": 0.5
+    },
+
+    {
+      "url": "https://homecs.kangwon.ac.kr/homecs/community/notice01.do",
+      "description": "강원대 가정교육과 학사공지",
+      "university": "강원대학교 사범대학",
+      "department": "가정교육과",
+      "category": "학부 공지사항",
+
+      "page_id": "article.offset",
+      "page_start": 0,
+      "page_offset": 10,
+
+      "board_path": "div.b-title-box a",
+
+      "title_path": ".b-title-box span:not([class])",
+      "content_path": "div.b-content-box div.fr-view",
+      "writer_path": ".b-writer-box span:last-child",
+      "date_path": ".b-date-box span:last-child",
+      "attachment_path": ".b-file-box a.file-down-btn",
+
+      "article_ID": "articleNo",
+      "duplicate_check_key": "article_id",
+
+      "crawl_timeout": 30,
+      "crawl_delay": 0.5
+    },
+    {
+      "url": "https://sciedu.kangwon.ac.kr/sciedu/community/notice.do",
+      "description": "강원대 과학교육학부 학사공지",
+      "university": "강원대학교 사범대학",
+      "department": "과학교육학부",
+      "category": "학부 공지사항",
+
+      "page_id": "article.offset",
+      "page_start": 0,
+      "page_offset": 10,
+
+      "board_path": "div.b-title-box a",
+
+      "title_path": ".b-title-box span:not([class])",
+      "content_path": "div.b-content-box div.fr-view",
+      "writer_path": ".b-writer-box span:last-child",
+      "date_path": ".b-date-box span:last-child",
+      "attachment_path": ".b-file-box a.file-down-btn",
+
+      "article_ID": "articleNo",
+      "duplicate_check_key": "article_id",
+
+      "crawl_timeout": 30,
+      "crawl_delay": 0.5
+    },
+    {
+      "url": "https://edu.kangwon.ac.kr/edu/community/notice.do",
+      "description": "강원대 교육학과 학사공지",
+      "university": "강원대학교 사범대학",
+      "department": "교육학과",
+      "category": "학부 공지사항",
+
+      "page_id": "article.offset",
+      "page_start": 0,
+      "page_offset": 10,
+
+      "board_path": "div.b-title-box a",
+
+      "title_path": ".b-title-box span:not([class])",
+      "content_path": "div.b-content-box div.fr-view",
+      "writer_path": ".b-writer-box span:last-child",
+      "date_path": ".b-date-box span:last-child",
+      "attachment_path": ".b-file-box a.file-down-btn",
+
+      "article_ID": "articleNo",
+      "duplicate_check_key": "article_id",
+
+      "crawl_timeout": 30,
+      "crawl_delay": 0.5
+    },
+    {
+      "url": "https://koredu.kangwon.ac.kr/koredu/community/notice.do",
+      "description": "강원대 국어교육과 학사공지",
+      "university": "강원대학교 사범대학",
+      "department": "국어교육과",
+      "category": "학부 공지사항",
+
+      "page_id": "article.offset",
+      "page_start": 0,
+      "page_offset": 10,
+
+      "board_path": "div.b-title-box a",
+
+      "title_path": ".b-title-box span:not([class])",
+      "content_path": "div.b-content-box div.fr-view",
+      "writer_path": ".b-writer-box span:last-child",
+      "date_path": ".b-date-box span:last-child",
+      "attachment_path": ".b-file-box a.file-down-btn",
+
+      "article_ID": "articleNo",
+      "duplicate_check_key": "article_id",
+
+      "crawl_timeout": 30,
+      "crawl_delay": 0.5
+    },
+    {
+      "url": "https://mathedu.kangwon.ac.kr/mathedu/community/notice01.do",
+      "description": "강원대 수학교육과 학사공지",
+      "university": "강원대학교 사범대학",
+      "department": "수학교육과",
+      "category": "학부 공지사항",
+
+      "page_id": "article.offset",
+      "page_start": 0,
+      "page_offset": 10,
+
+      "board_path": "div.b-title-box a",
+
+      "title_path": ".b-title-box span:not([class])",
+      "content_path": "div.b-content-box div.fr-view",
+      "writer_path": ".b-writer-box span:last-child",
+      "date_path": ".b-date-box span:last-child",
+      "attachment_path": ".b-file-box a.file-down-btn",
+
+      "article_ID": "articleNo",
+      "duplicate_check_key": "article_id",
+
+      "crawl_timeout": 30,
+      "crawl_delay": 0.5
+    },
+    {
+      "url": "https://history.kangwon.ac.kr/history/community/notice.do",
+      "description": "강원대 역사교육과 학사공지",
+      "university": "강원대학교 사범대학",
+      "department": "역사교육과",
+      "category": "학부 공지사항",
+
+      "page_id": "article.offset",
+      "page_start": 0,
+      "page_offset": 10,
+
+      "board_path": "div.b-title-box a",
+
+      "title_path": ".b-title-box span:not([class])",
+      "content_path": "div.b-content-box div.fr-view",
+      "writer_path": ".b-writer-box span:last-child",
+      "date_path": ".b-date-box span:last-child",
+      "attachment_path": ".b-file-box a.file-down-btn",
+
+      "article_ID": "articleNo",
+      "duplicate_check_key": "article_id",
+
+      "crawl_timeout": 30,
+      "crawl_delay": 0.5
+    },
+    {
+      "url": "https://engedu.kangwon.ac.kr/engedu/community/notice.do",
+      "description": "강원대 영어교육과 학사공지",
+      "university": "강원대학교 사범대학",
+      "department": "영어교육과",
+      "category": "학부 공지사항",
+
+      "page_id": "article.offset",
+      "page_start": 0,
+      "page_offset": 10,
+
+      "board_path": "div.b-title-box a",
+
+      "title_path": ".b-title-box span:not([class])",
+      "content_path": "div.b-content-box div.fr-view",
+      "writer_path": ".b-writer-box span:last-child",
+      "date_path": ".b-date-box span:last-child",
+      "attachment_path": ".b-file-box a.file-down-btn",
+
+      "article_ID": "articleNo",
+      "duplicate_check_key": "article_id",
+
+      "crawl_timeout": 30,
+      "crawl_delay": 0.5
+    },
+    {
+      "url": "https://ethicsedu.kangwon.ac.kr/ethicsedu/community/notice.do",
+      "description": "강원대 윤리교육과 학사공지",
+      "university": "강원대학교 사범대학",
+      "department": "윤리교육과",
+      "category": "학부 공지사항",
+
+      "page_id": "article.offset",
+      "page_start": 0,
+      "page_offset": 10,
+
+      "board_path": "div.b-title-box a",
+
+      "title_path": ".b-title-box span:not([class])",
+      "content_path": "div.b-content-box div.fr-view",
+      "writer_path": ".b-writer-box span:last-child",
+      "date_path": ".b-date-box span:last-child",
+      "attachment_path": ".b-file-box a.file-down-btn",
+
+        "article_ID": "articleNo",
+      "duplicate_check_key": "article_id",
+
+      "crawl_timeout": 30,
+      "crawl_delay": 0.5
+    },
+    {
+      "url": "https://ssedu.kangwon.ac.kr/ssedu/community/notice.do",
+      "description": "강원대 일반사회교육과 학사공지",
+      "university": "강원대학교 사범대학",
+      "department": "일반사회교육과",
+      "category": "학부 공지사항",
+
+      "page_id": "article.offset",
+      "page_start": 0,
+      "page_offset": 10,
+
+      "board_path": "div.b-title-box a",
+
+      "title_path": ".b-title-box span:not([class])",
+      "content_path": "div.b-content-box div.fr-view",
+      "writer_path": ".b-writer-box span:last-child",
+      "date_path": ".b-date-box span:last-child",
+      "attachment_path": ".b-file-box a.file-down-btn",
+
+      "article_ID": "articleNo",
+      "duplicate_check_key": "article_id",
+
+      "crawl_timeout": 30,
+      "crawl_delay": 0.5
+    },
+    {
+      "url": "https://geoedu.kangwon.ac.kr/geoedu/community/notice.do",
+      "description": "강원대 지리교육과 학사공지",
+      "university": "강원대학교 사범대학",
+      "department": "지리교육과",
+      "category": "학부 공지사항",
+
+      "page_id": "article.offset",
+      "page_start": 0,
+      "page_offset": 10,
+
+      "board_path": "div.b-title-box a",
+
+      "title_path": ".b-title-box span:not([class])",
+      "content_path": "div.b-content-box div.fr-view",
+      "writer_path": ".b-writer-box span:last-child",
+      "date_path": ".b-date-box span:last-child",
+      "attachment_path": ".b-file-box a.file-down-btn",
+
+      "article_ID": "articleNo",
+      "duplicate_check_key": "article_id",
+
+      "crawl_timeout": 30,
+      "crawl_delay": 0.5
+    },
+    {
+      "url": "https://phyedu.kangwon.ac.kr/phyedu/community/notice.do",
+      "description": "강원대 체육교육과 학사공지",
+      "university": "강원대학교 사범대학",
+      "department": "체육교육과",
+      "category": "학부 공지사항",
+
+      "page_id": "article.offset",
+      "page_start": 0,
+      "page_offset": 10,
+
+      "board_path": "div.b-title-box a",
+
+      "title_path": ".b-title-box span:not([class])",
+      "content_path": "div.b-content-box div.fr-view",
+      "writer_path": ".b-writer-box span:last-child",
+      "date_path": ".b-date-box span:last-child",
+      "attachment_path": ".b-file-box a.file-down-btn",
+
+      "article_ID": "articleNo",
+      "duplicate_check_key": "article_id",
+
+      "crawl_timeout": 30,
+      "crawl_delay": 0.5
+    },
+    {
+      "url": "https://ccedu.kangwon.ac.kr/ccedu/community/notice.do",
+      "description": "강원대 한문교육과 학사공지",
+      "university": "강원대학교 사범대학",
+      "department": "한문교육과",
+      "category": "학부 공지사항",
+
+      "page_id": "article.offset",
+      "page_start": 0,
+      "page_offset": 10,
+
+      "board_path": "div.b-title-box a",
+
+      "title_path": ".b-title-box span:not([class])",
+      "content_path": "div.b-content-box div.fr-view",
+      "writer_path": ".b-writer-box span:last-child",
+      "date_path": ".b-date-box span:last-child",
+      "attachment_path": ".b-file-box a.file-down-btn",
+
+      "article_ID": "articleNo",
+      "duplicate_check_key": "article_id",
+
+      "crawl_timeout": 30,
+      "crawl_delay": 0.5
+    },
+
+    {
+      "url": "https://anthro.kangwon.ac.kr/anthro/community/notice.do",
+      "description": "강원대 문화인류학과 학사공지",
+      "university": "강원대학교 사회과학대학",
+      "department": "문화인류학과",
+      "category": "학부 공지사항",
+
+      "page_id": "article.offset",
+      "page_start": 0,
+      "page_offset": 10,
+
+      "board_path": "div.b-title-box a",
+
+      "title_path": ".b-title-box span:not([class])",
+      "content_path": "div.b-content-box div.fr-view",
+      "writer_path": ".b-writer-box span:last-child",
+      "date_path": ".b-date-box span:last-child",
+      "attachment_path": ".b-file-box a.file-down-btn",
+
+      "article_ID": "articleNo",
+      "duplicate_check_key": "article_id",
+
+      "crawl_timeout": 30,
+      "crawl_delay": 0.5
+    },
+    {
+      "url": "https://re1978.kangwon.ac.kr/re1978/community/notice.do",
+      "description": "강원대 부동산학과 학사공지",
+      "university": "강원대학교 사회과학대학",
+      "department": "부동산학과",
+      "category": "학부 공지사항",
+
+      "page_id": "article.offset",
+      "page_start": 0,
+      "page_offset": 10,
+
+      "board_path": "div.b-title-box a",
+
+      "title_path": ".b-title-box span:not([class])",
+      "content_path": "div.b-content-box div.fr-view",
+      "writer_path": ".b-writer-box span:last-child",
+      "date_path": ".b-date-box span:last-child",
+      "attachment_path": ".b-file-box a.file-down-btn",
+
+      "article_ID": "articleNo",
+      "duplicate_check_key": "article_id",
+
+      "crawl_timeout": 30,
+      "crawl_delay": 0.5
+    },
+    {
+      "url": "https://sociology.kangwon.ac.kr/sociology/community/notice.do",
+      "description": "강원대 사회학과 학사공지",
+      "university": "강원대학교 사회과학대학",
+      "department": "사회학과",
+      "category": "학부 공지사항",
+
+      "page_id": "article.offset",
+      "page_start": 0,
+      "page_offset": 10,
+
+      "board_path": "div.b-title-box a",
+
+      "title_path": ".b-title-box span:not([class])",
+      "content_path": "div.b-content-box div.fr-view",
+      "writer_path": ".b-writer-box span:last-child",
+      "date_path": ".b-date-box span:last-child",
+      "attachment_path": ".b-file-box a.file-down-btn",
+
+      "article_ID": "articleNo",
+      "duplicate_check_key": "article_id",
+
+      "crawl_timeout": 30,
+      "crawl_delay": 0.5
+    },
+    {
+      "url": "https://media.kangwon.ac.kr/masscom/community/undergraduate-notice.do",
+      "description": "강원대 미디어커뮤니케이션학과 학사공지",
+      "university": "강원대학교 사회과학대학",
+      "department": "미디어커뮤니케이션학과",
+      "category": "학부 공지사항",
+
+      "page_id": "article.offset",
+      "page_start": 0,
+      "page_offset": 10,
+
+      "board_path": "div.b-title-box a",
+
+      "title_path": ".b-title-box span:not([class])",
+      "content_path": "div.b-content-box div.fr-view",
+      "writer_path": ".b-writer-box span:last-child",
+      "date_path": ".b-date-box span:last-child",
+      "attachment_path": ".b-file-box a.file-down-btn",
+
+      "article_ID": "articleNo",
+      "duplicate_check_key": "article_id",
+
+      "crawl_timeout": 30,
+      "crawl_delay": 0.5
+    },
+    {
+      "url": "https://politics.kangwon.ac.kr/politics/community/undergraduate-notice.do",
+      "description": "강원대 정치외교학과 학사공지",
+      "university": "강원대학교 사회과학대학",
+      "department": "정치외교학과",
+      "category": "학부 공지사항",
+
+      "page_id": "article.offset",
+      "page_start": 0,
+      "page_offset": 10,
+
+      "board_path": "div.b-title-box a",
+
+      "title_path": ".b-title-box span:not([class])",
+      "content_path": "div.b-content-box div.fr-view",
+      "writer_path": ".b-writer-box span:last-child",
+      "date_path": ".b-date-box span:last-child",
+      "attachment_path": ".b-file-box a.file-down-btn",
+
+      "article_ID": "articleNo",
+      "duplicate_check_key": "article_id",
+
+      "crawl_timeout": 30,
+      "crawl_delay": 0.5
+    },
+    {
+      "url": "https://psych.kangwon.ac.kr/psych/notice/undergraduate.do",
+      "description": "강원대 행정・심리학부 심리학전공 학사공지",
+      "university": "강원대학교 사회과학대학",
+      "department": "행정・심리학부 심리학전공",
+      "category": "학부 공지사항",
+
+      "page_id": "article.offset",
+      "page_start": 0,
+      "page_offset": 10,
+
+      "board_path": "div.b-title-box a",
+
+      "title_path": ".b-title-box span:not([class])",
+      "content_path": "div.b-content-box div.fr-view",
+      "writer_path": ".b-writer-box span:last-child",
+      "date_path": ".b-date-box span:last-child",
+      "attachment_path": ".b-file-box a.file-down-btn",
+
+      "article_ID": "articleNo",
+      "duplicate_check_key": "article_id",
+
+      "crawl_timeout": 30,
+      "crawl_delay": 0.5
+    },
+    {
+      "url": "https://padm.kangwon.ac.kr/padm/life/notice-department.do",
+      "description": "강원대 행정・심리학부 행정학전공 학사공지",
+      "university": "강원대학교 사회과학대학",
+      "department": "행정・심리학부 행정학전공",
+      "category": "학부 공지사항",
+
+      "page_id": "article.offset",
+      "page_start": 0,
+      "page_offset": 10,
+
+      "board_path": "div.b-title-box a",
+
+      "title_path": ".b-title-box span:not([class])",
+      "content_path": "div.b-content-box div.fr-view",
+      "writer_path": ".b-writer-box span:last-child",
+      "date_path": ".b-date-box span:last-child",
+      "attachment_path": ".b-file-box a.file-down-btn",
+
+      "article_ID": "articleNo",
+      "duplicate_check_key": "article_id",
+
+      "crawl_timeout": 30,
+      "crawl_delay": 0.5
+    },
+
+    {
+      "url": "https://fm.kangwon.ac.kr/fm/community/notice.do",
+      "description": "강원대 산림과학부 산림경영학전공 학사공지",
+      "university": "강원대학교 산림환경과학대학",
+      "department": "산림과학부 산림경영학전공",
+      "category": "학부 공지사항",
+
+      "page_id": "article.offset",
+      "page_start": 0,
+      "page_offset": 10,
+
+      "board_path": "div.b-title-box a",
+
+      "title_path": ".b-title-box span:not([class])",
+      "content_path": "div.b-content-box div.fr-view",
+      "writer_path": ".b-writer-box span:last-child",
+      "date_path": ".b-date-box span:last-child",
+      "attachment_path": ".b-file-box a.file-down-btn",
+
+      "article_ID": "articleNo",
+      "duplicate_check_key": "article_id",
+
+      "crawl_timeout": 30,
+      "crawl_delay": 0.5
+    },
+    {
+      "url": "https://forestry.kangwon.ac.kr/forestry/community/notice.do",
+      "description": "강원대 산림과학부 산림자원학전공 학사공지",
+      "university": "강원대학교 산림환경과학대학",
+      "department": "산림과학부 산림자원학전공",
+      "category": "학부 공지사항",
+
+      "page_id": "article.offset",
+      "page_start": 0,
+      "page_offset": 10,
+
+      "board_path": "div.b-title-box a",
+
+      "title_path": ".b-title-box span:not([class])",
+      "content_path": "div.b-content-box div.fr-view",
+      "writer_path": ".b-writer-box span:last-child",
+      "date_path": ".b-date-box span:last-child",
+      "attachment_path": ".b-file-box a.file-down-btn",
+
+      "article_ID": "articleNo",
+      "duplicate_check_key": "article_id",
+
+      "crawl_timeout": 30,
+      "crawl_delay": 0.5
+    },
+    {
+      "url": "https://fep.kangwon.ac.kr/fep/community/notice.do",
+      "description": "강원대 산림과학부 산림환경보호학전공 학사공지",
+      "university": "강원대학교 산림환경과학대학",
+      "department": "산림과학부 산림환경보호학전공",
+      "category": "학부 공지사항",
+
+      "page_id": "article.offset",
+      "page_start": 0,
+      "page_offset": 10,
+
+      "board_path": "div.b-title-box a",
+
+      "title_path": ".b-title-box span:not([class])",
+      "content_path": "div.b-content-box div.fr-view",
+      "writer_path": ".b-writer-box span:last-child",
+      "date_path": ".b-date-box span:last-child",
+      "attachment_path": ".b-file-box a.file-down-btn",
+
+      "article_ID": "articleNo",
+      "duplicate_check_key": "article_id",
+
+      "crawl_timeout": 30,
+      "crawl_delay": 0.5
+    },
+    {
+      "url": "https://wood.kangwon.ac.kr/wood/community/notice.do",
+      "description": "강원대 목재・종이과학부 목재과학전공 학사공지",
+      "university": "강원대학교 산림환경과학대학",
+      "department": "목재・종이과학부 목재과학전공",
+      "category": "학부 공지사항",
+
+      "page_id": "article.offset",
+      "page_start": 0,
+      "page_offset": 10,
+
+      "board_path": "div.b-title-box a",
+
+      "title_path": ".b-title-box span:not([class])",
+      "content_path": "div.b-content-box div.fr-view",
+      "writer_path": ".b-writer-box span:last-child",
+      "date_path": ".b-date-box span:last-child",
+      "attachment_path": ".b-file-box a.file-down-btn",
+
+      "article_ID": "articleNo",
+      "duplicate_check_key": "article_id",
+
+      "crawl_timeout": 30,
+      "crawl_delay": 0.5
+    },
+    {
+      "url": "https://paper.kangwon.ac.kr/paper/community/notice.do",
+      "description": "강원대 목재・종이과학부 종이소재과학전공 학사공지",
+      "university": "강원대학교 산림환경과학대학",
+      "department": "목재・종이과학부 종이소재과학전공",
+      "category": "학부 공지사항",
+
+      "page_id": "article.offset",
+      "page_start": 0,
+      "page_offset": 10,
+
+      "board_path": "div.b-title-box a",
+
+      "title_path": ".b-title-box span:not([class])",
+      "content_path": "div.b-content-box div.fr-view",
+      "writer_path": ".b-writer-box span:last-child",
+      "date_path": ".b-date-box span:last-child",
+      "attachment_path": ".b-file-box a.file-down-btn",
+
+      "article_ID": "articleNo",
+      "duplicate_check_key": "article_id",
+
+      "crawl_timeout": 30,
+      "crawl_delay": 0.5
+    },
+    {
+      "url": "https://lands.kangwon.ac.kr/lands/community/notice.do",
+      "description": "강원대 생태조경디자인학과 학사공지",
+      "university": "강원대학교 산림환경과학대학",
+      "department": "생태조경디자인학과",
+      "category": "학부 공지사항",
+
+      "page_id": "article.offset",
+      "page_start": 0,
+      "page_offset": 10,
+
+      "board_path": "div.b-title-box a",
+
+      "title_path": ".b-title-box span:not([class])",
+      "content_path": "div.b-content-box div.fr-view",
+      "writer_path": ".b-writer-box span:last-child",
+      "date_path": ".b-date-box span:last-child",
+      "attachment_path": ".b-file-box a.file-down-btn",
+
+      "article_ID": "articleNo",
+      "duplicate_check_key": "article_id",
+
+      "crawl_timeout": 30,
+      "crawl_delay": 0.5
+    },
+
+    {
+      "url": "https://vetmed.kangwon.ac.kr/vetmed/community/notice.do",
+      "description": "강원대 수의예과 학사공지",
+      "university": "강원대학교 수의과대학",
+      "department": "수의예과",
+      "category": "학부 공지사항",
+
+      "page_id": "article.offset",
+      "page_start": 0,
+      "page_offset": 10,
+
+      "board_path": "div.b-title-box a",
+
+      "title_path": ".b-title-box span:not([class])",
+      "content_path": "div.b-content-box div.fr-view",
+      "writer_path": ".b-writer-box span:last-child",
+      "date_path": ".b-date-box span:last-child",
+      "attachment_path": ".b-file-box a.file-down-btn",
+
+      "article_ID": "articleNo",
+      "duplicate_check_key": "article_id",
+
+      "crawl_timeout": 30,
+      "crawl_delay": 0.5
+    },
+
+    {
+      "url": "https://pharmacy.kangwon.ac.kr/pharmacy/community/notice-department.do",
+      "description": "강원대 약학과 학사공지",
+      "university": "강원대학교 약학대학",
+      "department": "약학과",
+      "category": "학부 공지사항",
+
+      "page_id": "article.offset",
+      "page_start": 0,
+      "page_offset": 10,
+
+      "board_path": "div.b-title-box a",
+
+      "title_path": ".b-title-box span:not([class])",
+      "content_path": "div.b-content-box div.fr-view",
+      "writer_path": ".b-writer-box span:last-child",
+      "date_path": ".b-date-box span:last-child",
+      "attachment_path": ".b-file-box a.file-down-btn",
+
+      "article_ID": "articleNo",
+      "duplicate_check_key": "article_id",
+
+      "crawl_timeout": 30,
+      "crawl_delay": 0.5
+    },
+
+    {
+      "url": "https://smed.kangwon.ac.kr/smed/community/notice.do",
+      "description": "강원대 의예과 학사공지",
+      "university": "강원대학교 의과대학",
+      "department": "의예과",
+      "category": "학부 공지사항",
+
+      "page_id": "article.offset",
+      "page_start": 0,
+      "page_offset": 10,
+
+      "board_path": "div.b-title-box a",
+
+      "title_path": ".b-title-box span:not([class])",
+      "content_path": "div.b-content-box div.fr-view",
+      "writer_path": ".b-writer-box span:last-child",
+      "date_path": ".b-date-box span:last-child",
+      "attachment_path": ".b-file-box a.file-down-btn",
+
+      "article_ID": "articleNo",
+      "duplicate_check_key": "article_id",
+
+      "crawl_timeout": 30,
+      "crawl_delay": 0.5
+    },
+
+    {
+      "url": "https://molscien.kangwon.ac.kr/molscien/community/notice01.do",
+      "description": "강원대 분자생명과학과 학사공지",
+      "university": "강원대학교 의생명과학대학",
+      "department": "분자생명과학과",
+      "category": "학부 공지사항",
+
+      "page_id": "article.offset",
+      "page_start": 0,
+      "page_offset": 10,
+
+      "board_path": "div.b-title-box a",
+
+      "title_path": ".b-title-box span:not([class])",
+      "content_path": "div.b-content-box div.fr-view",
+      "writer_path": ".b-writer-box span:last-child",
+      "date_path": ".b-date-box span:last-child",
+      "attachment_path": ".b-file-box a.file-down-btn",
+
+      "article_ID": "articleNo",
+      "duplicate_check_key": "article_id",
+
+      "crawl_timeout": 30,
+      "crawl_delay": 0.5
+    },
+    {
+      "url": "https://bio-health.kangwon.ac.kr/bio-health/community/notice-department.do",
+      "description": "강원대 생명건강공학과 학사공지",
+      "university": "강원대학교 의생명과학대학",
+      "department": "생명건강공학과",
+      "category": "학부 공지사항",
+
+      "page_id": "article.offset",
+      "page_start": 0,
+      "page_offset": 10,
+
+      "board_path": "div.b-title-box a",
+
+      "title_path": ".b-title-box span:not([class])",
+      "content_path": "div.b-content-box div.fr-view",
+      "writer_path": ".b-writer-box span:last-child",
+      "date_path": ".b-date-box span:last-child",
+      "attachment_path": ".b-file-box a.file-down-btn",
+
+      "article_ID": "articleNo",
+      "duplicate_check_key": "article_id",
+
+      "crawl_timeout": 30,
+      "crawl_delay": 0.5
+    },
+    {
+      "url": "https://bme.kangwon.ac.kr/bme/community/notice.do",
+      "description": "강원대 생물의소재공학과 학사공지",
+      "university": "강원대학교 의생명과학대학",
+      "department": "생물의소재공학과",
+      "category": "학부 공지사항",
+
+      "page_id": "article.offset",
+      "page_start": 0,
+      "page_offset": 10,
+
+      "board_path": "div.b-title-box a",
+
+      "title_path": ".b-title-box span:not([class])",
+      "content_path": "div.b-content-box div.fr-view",
+      "writer_path": ".b-writer-box span:last-child",
+      "date_path": ".b-date-box span:last-child",
+      "attachment_path": ".b-file-box a.file-down-btn",
+
+      "article_ID": "articleNo",
+      "duplicate_check_key": "article_id",
+
+      "crawl_timeout": 30,
+      "crawl_delay": 0.5
+    },
+    {
+      "url": "https://si.kangwon.ac.kr/si/community/notice.do",
+      "description": "강원대 의생명융합학부 의생명시스템과학전공 학사공지",
+      "university": "강원대학교 의생명과학대학",
+      "department": "의생명융합학부 의생명시스템과학전공",
+      "category": "학부 공지사항",
+
+      "page_id": "article.offset",
+      "page_start": 0,
+      "page_offset": 10,
+
+      "board_path": "div.b-title-box a",
+
+      "title_path": ".b-title-box span:not([class])",
+      "content_path": "div.b-content-box div.fr-view",
+      "writer_path": ".b-writer-box span:last-child",
+      "date_path": ".b-date-box span:last-child",
+      "attachment_path": ".b-file-box a.file-down-btn",
+
+      "article_ID": "articleNo",
+      "duplicate_check_key": "article_id",
+
+      "crawl_timeout": 30,
+      "crawl_delay": 0.5
+    },
+    {
+      "url": "https://dmbt.kangwon.ac.kr/dmbt/administration/notice-department.do",
+      "description": "강원대 의생명융합학부 의생명공학전공 학사공지",
+      "university": "강원대학교 의생명과학대학",
+      "department": "의생명융합학부 의생명공학전공",
+      "category": "학부 공지사항",
+
+      "page_id": "article.offset",
+      "page_start": 0,
+      "page_offset": 10,
+
+      "board_path": "div.b-title-box a",
+
+      "title_path": ".b-title-box span:not([class])",
+      "content_path": "div.b-content-box div.fr-view",
+      "writer_path": ".b-writer-box span:last-child",
+      "date_path": ".b-date-box span:last-child",
+      "attachment_path": ".b-file-box a.file-down-btn",
+
+      "article_ID": "articleNo",
+      "duplicate_check_key": "article_id",
+
+      "crawl_timeout": 30,
+      "crawl_delay": 0.5
+    },
+
+    {
+      "url": "https://korean.kangwon.ac.kr/korean/community/notice.do",
+      "description": "강원대 인문학부 국어국문학전공 학사공지",
+      "university": "강원대학교 인문대학",
+      "department": "인문학부 국어국문학전공",
+      "category": "학부 공지사항",
+
+      "page_id": "article.offset",
+      "page_start": 0,
+      "page_offset": 10,
+
+      "board_path": "div.b-title-box a",
+
+      "title_path": ".b-title-box span:not([class])",
+      "content_path": "div.b-content-box div.fr-view",
+      "writer_path": ".b-writer-box span:last-child",
+      "date_path": ".b-date-box span:last-child",
+      "attachment_path": ".b-file-box a.file-down-btn",
+
+      "article_ID": "articleNo",
+      "duplicate_check_key": "article_id",
+
+      "crawl_timeout": 30,
+      "crawl_delay": 0.5
+    },
+    {
+      "url": "https://german.kangwon.ac.kr/german/community/notice.do",
+      "description": "강원대 인문학부 독어독문학전공 학사공지",
+      "university": "강원대학교 인문대학",
+      "department": "인문학부 독어독문학전공",
+      "category": "학부 공지사항",
+
+      "page_id": "article.offset",
+      "page_start": 0,
+      "page_offset": 10,
+
+      "board_path": "div.b-title-box a",
+
+      "title_path": ".b-title-box span:not([class])",
+      "content_path": "div.b-content-box div.fr-view",
+      "writer_path": ".b-writer-box span:last-child",
+      "date_path": ".b-date-box span:last-child",
+      "attachment_path": ".b-file-box a.file-down-btn",
+
+      "article_ID": "articleNo",
+      "duplicate_check_key": "article_id",
+
+      "crawl_timeout": 30,
+      "crawl_delay": 0.5
+    },
+    {
+      "url": "https://france.kangwon.ac.kr/france/community/notice.do",
+      "description": "강원대 인문학부 불어불문학전공 학사공지",
+      "university": "강원대학교 인문대학",
+      "department": "인문학부 불어불문학전공",
+      "category": "학부 공지사항",
+
+      "page_id": "article.offset",
+      "page_start": 0,
+      "page_offset": 10,
+
+      "board_path": "div.b-title-box a",
+
+      "title_path": ".b-title-box span:not([class])",
+      "content_path": "div.b-content-box div.fr-view",
+      "writer_path": ".b-writer-box span:last-child",
+      "date_path": ".b-date-box span:last-child",
+      "attachment_path": ".b-file-box a.file-down-btn",
+
+      "article_ID": "articleNo",
+      "duplicate_check_key": "article_id",
+
+      "crawl_timeout": 30,
+      "crawl_delay": 0.5
+    },
+    {
+      "url": "https://knuhisto.kangwon.ac.kr/knuhisto/community/notice.do",
+      "description": "강원대 인문학부 사학전공 학사공지",
+      "university": "강원대학교 인문대학",
+      "department": "인문학부 사학전공",
+      "category": "학부 공지사항",
+
+      "page_id": "article.offset",
+      "page_start": 0,
+      "page_offset": 10,
+
+      "board_path": "div.b-title-box a",
+
+      "title_path": ".b-title-box span:not([class])",
+      "content_path": "div.b-content-box div.fr-view",
+      "writer_path": ".b-writer-box span:last-child",
+      "date_path": ".b-date-box span:last-child",
+      "attachment_path": ".b-file-box a.file-down-btn",
+
+      "article_ID": "articleNo",
+      "duplicate_check_key": "article_id",
+
+      "crawl_timeout": 30,
+      "crawl_delay": 0.5
+    },
+    {
+      "url": "https://english.kangwon.ac.kr/english/community/notice01.do",
+      "description": "강원대 인문학부 영어영문학전공 학사공지",
+      "university": "강원대학교 인문대학",
+      "department": "인문학부 영어영문학전공",
+      "category": "학부 공지사항",
+
+      "page_id": "article.offset",
+      "page_start": 0,
+      "page_offset": 10,
+
+      "board_path": "div.b-title-box a",
+
+      "title_path": ".b-title-box span:not([class])",
+      "content_path": "div.b-content-box div.fr-view",
+      "writer_path": ".b-writer-box span:last-child",
+      "date_path": ".b-date-box span:last-child",
+      "attachment_path": ".b-file-box a.file-down-btn",
+
+      "article_ID": "articleNo",
+      "duplicate_check_key": "article_id",
+
+      "crawl_timeout": 30,
+      "crawl_delay": 0.5
+    },
+    {
+      "url": "https://japan.kangwon.ac.kr/kw/community/notice.do",
+      "description": "강원대 인문학부 일본학전공 학사공지",
+      "university": "강원대학교 인문대학",
+      "department": "인문학부 일본학전공",
+      "category": "학부 공지사항",
+
+      "page_id": "article.offset",
+      "page_start": 0,
+      "page_offset": 10,
+
+      "board_path": "div.b-title-box a",
+
+      "title_path": ".b-title-box span:not([class])",
+      "content_path": "div.b-content-box div.fr-view",
+      "writer_path": ".b-writer-box span:last-child",
+      "date_path": ".b-date-box span:last-child",
+      "attachment_path": ".b-file-box a.file-down-btn",
+
+      "article_ID": "articleNo",
+      "duplicate_check_key": "article_id",
+
+      "crawl_timeout": 30,
+      "crawl_delay": 0.5
+    },
+    {
+      "url": "https://chinese.kangwon.ac.kr/chinese/community/notice01.do",
+      "description": "강원대 인문학부 중어중문학전공 학사공지",
+      "university": "강원대학교 인문대학",
+      "department": "인문학부 중어중문학전공",
+      "category": "학부 공지사항",
+
+      "page_id": "article.offset",
+      "page_start": 0,
+      "page_offset": 10,
+
+      "board_path": "div.b-title-box a",
+
+      "title_path": ".b-title-box span:not([class])",
+      "content_path": "div.b-content-box div.fr-view",
+      "writer_path": ".b-writer-box span:last-child",
+      "date_path": ".b-date-box span:last-child",
+      "attachment_path": ".b-file-box a.file-down-btn",
+
+      "article_ID": "articleNo",
+      "duplicate_check_key": "article_id",
+
+      "crawl_timeout": 30,
+      "crawl_delay": 0.5
+    },
+    {
+      "url": "https://kwphilo.kangwon.ac.kr/kwphilo/community/notice.do",
+      "description": "강원대 인문학부 철학전공 학사공지",
+      "university": "강원대학교 인문대학",
+      "department": "인문학부 철학전공",
+      "category": "학부 공지사항",
+
+      "page_id": "article.offset",
+      "page_start": 0,
+      "page_offset": 10,
+
+      "board_path": "div.b-title-box a",
+
+      "title_path": ".b-title-box span:not([class])",
+      "content_path": "div.b-content-box div.fr-view",
+      "writer_path": ".b-writer-box span:last-child",
+      "date_path": ".b-date-box span:last-child",
+      "attachment_path": ".b-file-box a.file-down-btn",
+
+      "article_ID": "articleNo",
+      "duplicate_check_key": "article_id",
+
+      "crawl_timeout": 30,
+      "crawl_delay": 0.5
+    },
+
+    {
+      "url": "https://scphys.kangwon.ac.kr/physics/community/notice.do",
+      "description": "강원대 반도체물리학과 학사공지",
+      "university": "강원대학교 자연과학대학",
+      "department": "반도체물리학과",
+      "category": "학부 공지사항",
+
+      "page_id": "article.offset",
+      "page_start": 0,
+      "page_offset": 10,
+
+      "board_path": "div.b-title-box a",
+
+      "title_path": ".b-title-box span:not([class])",
+      "content_path": "div.b-content-box div.fr-view",
+      "writer_path": ".b-writer-box span:last-child",
+      "date_path": ".b-date-box span:last-child",
+      "attachment_path": ".b-file-box a.file-down-btn",
+
+      "article_ID": "articleNo",
+      "duplicate_check_key": "article_id",
+
+      "crawl_timeout": 30,
+      "crawl_delay": 0.5
+    },
+    {
+      "url": "https://biology.kangwon.ac.kr/biology/community/notice.do",
+      "description": "강원대 생명과학과 학사공지",
+      "university": "강원대학교 자연과학대학",
+      "department": "생명과학과",
+      "category": "학부 공지사항",
+
+      "page_id": "article.offset",
+      "page_start": 0,
+      "page_offset": 10,
+
+      "board_path": "div.b-title-box a",
+
+      "title_path": ".b-title-box span:not([class])",
+      "content_path": "div.b-content-box div.fr-view",
+      "writer_path": ".b-writer-box span:last-child",
+      "date_path": ".b-date-box span:last-child",
+      "attachment_path": ".b-file-box a.file-down-btn",
+
+      "article_ID": "articleNo",
+      "duplicate_check_key": "article_id",
+
+      "crawl_timeout": 30,
+      "crawl_delay": 0.5
+    },
+    {
+      "url": "https://math.kangwon.ac.kr/math/community/notice.do",
+      "description": "강원대 수학과 학사공지",
+      "university": "강원대학교 자연과학대학",
+      "department": "수학과",
+      "category": "학부 공지사항",
+
+      "page_id": "article.offset",
+      "page_start": 0,
+      "page_offset": 10,
+
+      "board_path": "div.b-title-box a",
+
+      "title_path": ".b-title-box span:not([class])",
+      "content_path": "div.b-content-box div.fr-view",
+      "writer_path": ".b-writer-box span:last-child",
+      "date_path": ".b-date-box span:last-child",
+      "attachment_path": ".b-file-box a.file-down-btn",
+
+      "article_ID": "articleNo",
+      "duplicate_check_key": "article_id",
+
+      "crawl_timeout": 30,
+      "crawl_delay": 0.5
+    },
+    {
+      "url": "https://geophysics.kangwon.ac.kr/geophysics/community/notice.do",
+      "description": "강원대 지질・지구물리학부 지구물리학전공 학사공지",
+      "university": "강원대학교 자연과학대학",
+      "department": "지질・지구물리학부 지구물리학전공",
+      "category": "학부 공지사항",
+
+      "page_id": "article.offset",
+      "page_start": 0,
+      "page_offset": 10,
+
+      "board_path": "div.b-title-box a",
+
+      "title_path": ".b-title-box span:not([class])",
+      "content_path": "div.b-content-box div.fr-view",
+      "writer_path": ".b-writer-box span:last-child",
+      "date_path": ".b-date-box span:last-child",
+      "attachment_path": ".b-file-box a.file-down-btn",
+
+      "article_ID": "articleNo",
+      "duplicate_check_key": "article_id",
+
+      "crawl_timeout": 30,
+      "crawl_delay": 0.5
+    },
+    {
+      "url": "https://geology.kangwon.ac.kr/geology/community/notice-department.do",
+      "description": "강원대 지질・지구물리학부 지질학전공 학사공지",
+      "university": "강원대학교 자연과학대학",
+      "department": "지질・지구물리학부 지질학전공",
+      "category": "학부 공지사항",
+
+      "page_id": "article.offset",
+      "page_start": 0,
+      "page_offset": 10,
+
+      "board_path": "div.b-title-box a",
+
+      "title_path": ".b-title-box span:not([class])",
+      "content_path": "div.b-content-box div.fr-view",
+      "writer_path": ".b-writer-box span:last-child",
+      "date_path": ".b-date-box span:last-child",
+      "attachment_path": ".b-file-box a.file-down-btn",
+
+      "article_ID": "articleNo",
+      "duplicate_check_key": "article_id",
+
+      "crawl_timeout": 30,
+      "crawl_delay": 0.5
+    },
+    {
+      "url": "https://biochem.kangwon.ac.kr/biochem/community/undergraduate-notice.do",
+      "description": "강원대 화학・생화학부 생화학전공 학사공지",
+      "university": "강원대학교 자연과학대학",
+      "department": "화학・생화학부 생화학전공",
+      "category": "학부 공지사항",
+
+      "page_id": "article.offset",
+      "page_start": 0,
+      "page_offset": 10,
+
+      "board_path": "div.b-title-box a",
+
+      "title_path": ".b-title-box span:not([class])",
+      "content_path": "div.b-content-box div.fr-view",
+      "writer_path": ".b-writer-box span:last-child",
+      "date_path": ".b-date-box span:last-child",
+      "attachment_path": ".b-file-box a.file-down-btn",
+
+      "article_ID": "articleNo",
+      "duplicate_check_key": "article_id",
+
+      "crawl_timeout": 30,
+      "crawl_delay": 0.5
+    },
+    {
+      "url": "https://chemistry.kangwon.ac.kr/chemistry/community/notice.do",
+      "description": "강원대 화학・생화학부 화학전공 학사공지",
+      "university": "강원대학교 자연과학대학",
+      "department": "화학・생화학부 화학전공",
+      "category": "학부 공지사항",
+
+      "page_id": "article.offset",
+      "page_start": 0,
+      "page_offset": 10,
+
+      "board_path": "div.b-title-box a",
+
+      "title_path": ".b-title-box span:not([class])",
+      "content_path": "div.b-content-box div.fr-view",
+      "writer_path": ".b-writer-box span:last-child",
+      "date_path": ".b-date-box span:last-child",
+      "attachment_path": ".b-file-box a.file-down-btn",
+
+      "article_ID": "articleNo",
+      "duplicate_check_key": "article_id",
+
+      "crawl_timeout": 30,
+      "crawl_delay": 0.5
+    },
+
+    {
+      "url": "https://eee.kangwon.ac.kr/eee/community/notice.do",
+      "description": "강원대 전기전자공학과 학사공지",
+      "university": "강원대학교 IT대학",
+      "department": "전기전자공학과",
+      "category": "학부 공지사항",
+
+      "page_id": "article.offset",
+      "page_start": 0,
+      "page_offset": 10,
+
+      "board_path": "div.b-title-box a",
+
+      "title_path": ".b-title-box span:not([class])",
+      "content_path": "div.b-content-box div.fr-view",
+      "writer_path": ".b-writer-box span:last-child",
+      "date_path": ".b-date-box span:last-child",
+      "attachment_path": ".b-file-box a.file-down-btn",
+
+      "article_ID": "articleNo",
+      "duplicate_check_key": "article_id",
+
+      "crawl_timeout": 30,
+      "crawl_delay": 0.5
+    },
+    {
+      "url": "https://ee.kangwon.ac.kr/ee/community/notice01.do",
+      "description": "강원대 전자공학과 학사공지",
+      "university": "강원대학교 IT대학",
+      "department": "전자공학과",
+      "category": "학부 공지사항",
+
+      "page_id": "article.offset",
+      "page_start": 0,
+      "page_offset": 10,
+
+      "board_path": "div.b-title-box a",
+
+      "title_path": ".b-title-box span:not([class])",
+      "content_path": "div.b-content-box div.fr-view",
+      "writer_path": ".b-writer-box span:last-child",
+      "date_path": ".b-date-box span:last-child",
+      "attachment_path": ".b-file-box a.file-down-btn",
+
+      "article_ID": "articleNo",
+      "duplicate_check_key": "article_id",
+
+      "crawl_timeout": 30,
+      "crawl_delay": 0.5
+    },
+    {
+      "url": "https://cse.kangwon.ac.kr/cse/community/undergraduate-notice.do",
+      "description": "강원대 컴퓨터공학과 학사공지",
+      "university": "강원대학교 IT대학",
+      "department": "컴퓨터공학과",
+      "category": "학부 공지사항",
+
+      "page_id": "article.offset",
+      "page_start": 0,
+      "page_offset": 10,
+
+      "board_path": "div.b-title-box a",
+
+      "title_path": ".b-title-box span:not([class])",
+      "content_path": "div.b-content-box div.fr-view",
+      "writer_path": ".b-writer-box span:last-child",
+      "date_path": ".b-date-box span:last-child",
+      "attachment_path": ".b-file-box a.file-down-btn",
+
+      "article_ID": "articleNo",
+      "duplicate_check_key": "article_id",
+
+      "crawl_timeout": 30,
+      "crawl_delay": 0.5
+    },
+    {
+      "url": "https://ai.kangwon.ac.kr/ai/community/notice.do",
+      "description": "강원대 AI융합학과 학사공지",
+      "university": "강원대학교 IT대학",
+      "department": "AI융합학과",
+      "category": "학부 공지사항",
+
+      "page_id": "article.offset",
+      "page_start": 0,
+      "page_offset": 10,
+
+      "board_path": "div.b-title-box a",
+
+      "title_path": ".b-title-box span:not([class])",
+      "content_path": "div.b-content-box div.fr-view",
+      "writer_path": ".b-writer-box span:last-child",
+      "date_path": ".b-date-box span:last-child",
+      "attachment_path": ".b-file-box a.file-down-btn",
+
+      "article_ID": "articleNo",
+      "duplicate_check_key": "article_id",
+
+      "crawl_timeout": 30,
+      "crawl_delay": 0.5
+    },
+    {
+      "url": "https://military.kangwon.ac.kr/military/professor/notice.do",
+      "description": "강원대 디지털밀리터리학과 학사공지",
+      "university": "강원대학교 IT대학",
+      "department": "디지털밀리터리학과",
+      "category": "학부 공지사항",
+
+      "page_id": "article.offset",
+      "page_start": 0,
+      "page_offset": 10,
+
+      "board_path": "div.b-title-box a",
+
+      "title_path": ".b-title-box span:not([class])",
+      "content_path": "div.b-content-box div.fr-view",
+      "writer_path": ".b-writer-box span:last-child",
+      "date_path": ".b-date-box span:last-child",
+      "attachment_path": ".b-file-box a.file-down-btn",
+
+      "article_ID": "articleNo",
+      "duplicate_check_key": "article_id",
+
+      "crawl_timeout": 30,
+      "crawl_delay": 0.5
+    },
+
+    {
+      "url": "https://liberal.kangwon.ac.kr/liberal/community/notice.do",
+      "description": "강원대 자유전공학부 학사공지",
+      "university": "강원대학교 독립학부",
+      "department": "자유전공학부",
+      "category": "학부 공지사항",
+
+      "page_id": "article.offset",
+      "page_start": 0,
+      "page_offset": 10,
+
+      "board_path": "div.b-title-box a",
+
+      "title_path": ".b-title-box span:not([class])",
+      "content_path": "div.b-content-box div.fr-view",
+      "writer_path": ".b-writer-box span:last-child",
+      "date_path": ".b-date-box span:last-child",
+      "attachment_path": ".b-file-box a.file-down-btn",
+
+      "article_ID": "articleNo",
+      "duplicate_check_key": "article_id",
+
+      "crawl_timeout": 30,
+      "crawl_delay": 0.5
+    },
+
+    {
       "url": "https://health.kangwon.ac.kr/index.php?mt=page&mp=4_1&mm=oxbbs&oxid=1&key=&val=&subcmd=&CAT_ID=0&artpp=15&cpage=1",
       "description": "강원대 보건진료소 공지",
       "university": "강원대학교",
@@ -26,23 +2241,98 @@
       "crawl_delay": 0.5
     },
     {
-      "url": "https://ai.kangwon.ac.kr/ai/community/notice.do?mode=list&&articleLimit=10&article.offset=0",
-      "description": "강원대 AI융합학과 학사공지",
+      "url": "https://www.knucoop.or.kr/board/notice/page/1/",
+      "description": "강원대 생활협동조합 공지",
       "university": "강원대학교",
-      "department": "AI융합학과",
-      "category": "학부 공지사항",
+      "department": "생활협동조합",
+      "category": "공지사항",
+
+      "page_id": "",
+      "page_start": 1,
+      "page_offset": 1,
+
+      "board_path": "a.text-notice",
+
+      "title_path": "div.view_title h2",
+      "content_path": "div.view_cont",
+      "writer_path": "div.view_info li:nth-of-type(1)",
+      "date_path": "div.view_info li:nth-of-type(2)",
+      "attachment_path": "div.bbs_file a",
+
+      "article_ID": "notice_url_path_number",
+      "duplicate_check_key": "article_id",
+
+      "crawl_timeout": 30,
+      "crawl_delay": 0.5
+    },
+    {
+      "url": "https://wwwk.kangwon.ac.kr/www/selectBbsNttList.do?bbsNo=34&&pageUnit=10&key=232&pageIndex=1",
+      "description": "강원대 장학안내 공지",
+      "university": "강원대학교",
+      "department": "장학안내",
+      "category": "공지사항",
+
+      "page_id": "pageIndex",
+      "page_start": 1,
+      "page_offset": 1,
+
+      "board_path": "td.subject a",
+
+      "title_path": "div.bbs_view h2",
+      "content_path": "div.bbs_cont",
+      "writer_path": "div.bbs_info li:nth-of-type(1)",
+      "date_path": "div.bbs_info li:nth-of-type(2)",
+      "attachment_path": "div.bbs_file a",
+
+      "article_ID": "nttNo",
+      "duplicate_check_key": "article_id",
+
+      "crawl_timeout": 30,
+      "crawl_delay": 0.5
+    },
+    {
+      "url": "https://sports.kangwon.ac.kr/bbs/board.php?bo_table=sub5_1&page=1",
+      "description": "강원대 체육진흥원 공지",
+      "university": "강원대학교",
+      "department": "체육진흥원",
+      "category": "공지사항",
+
+      "page_id": "page",
+      "page_start": 1,
+      "page_offset": 1,
+
+      "board_path": "td.td_subject a",
+
+      "title_path": "div.view_title h2",
+      "content_path": "div.view_cont",
+      "writer_path": "div.view_info li:nth-of-type(1)",
+      "date_path": "div.view_info li:nth-of-type(2)",
+      "attachment_path": "div.bbs_file a",
+
+      "article_ID": "wr_id",
+      "duplicate_check_key": "article_id",
+
+      "crawl_timeout": 30,
+      "crawl_delay": 0.5
+    },
+    {
+      "url": "https://oiaknu.kangwon.ac.kr/oiaknu/notice.do?mode=list&&articleLimit=10&article.offset=0",
+      "description": "강원대 국제교류처 공지",
+      "university": "강원대학교",
+      "department": "국제교류처",
+      "category": "공지사항",
 
       "page_id": "article.offset",
       "page_start": 0,
       "page_offset": 10,
 
-      "board_path": "div.b-title-box a",
+      "board_path": "td.subject a",
 
-      "title_path": ".b-title-box span:not([class])",
-      "content_path": "div.b-content-box div.fr-view",
-      "writer_path": ".b-writer-box span:last-child",
-      "date_path": ".b-date-box span:last-child",
-      "attachment_path": ".b-file-box a.file-down-btn",
+      "title_path": "div.bbs_view h2",
+      "content_path": "div.bbs_cont",
+      "writer_path": "div.bbs_info li:nth-of-type(1)",
+      "date_path": "div.bbs_info li:nth-of-type(2)",
+      "attachment_path": "div.bbs_file a",
 
       "article_ID": "articleNo",
       "duplicate_check_key": "article_id",
@@ -51,11 +2341,286 @@
       "crawl_delay": 0.5
     },
     {
-      "url": "https://cse.kangwon.ac.kr/cse/community/undergraduate-notice.do?mode=list&article.offset=0",
-      "description": "강원대 컴퓨터공학과 학사공지",
+      "url": "https://knuserv.kangwon.ac.kr/notice?page=1",
+      "description": "강원대 봉사은행 공지",
+      "university": "강원대학교",
+      "department": "봉사은행",
+      "category": "공지사항",
+
+      "page_id": "page",
+      "page_start": 1,
+      "page_offset": 10,
+
+      "board_path": "td.subject a",
+
+      "title_path": "div.view_title h2",
+      "content_path": "div.view_cont",
+      "writer_path": "div.view_info li:nth-of-type(1)",
+      "date_path": "div.view_info li:nth-of-type(2)",
+      "attachment_path": "div.bbs_file a",
+
+      "article_ID": "wr_id",
+      "duplicate_check_key": "article_id",
+
+      "crawl_timeout": 30,
+      "crawl_delay": 0.5
+    },
+    {
+      "url": "https://support.kangwon.ac.kr/support/notice/notice.do?mode=list&&articleLimit=10&article.offset=0",
+      "description": "강원대 장애학생지원센터 공지",
+      "university": "강원대학교",
+      "department": "장애학생지원센터",
+      "category": "공지사항",
+
+      "page_id": "article.offset",
+      "page_start": 0,
+      "page_offset": 10,
+
+      "board_path": "div.b-title-box.b-notice a",
+
+      "title_path": "div.view_title h2",
+      "content_path": "div.view_cont",
+      "writer_path": "div.view_info li:nth-of-type(1)",
+      "date_path": "div.view_info li:nth-of-type(2)",
+      "attachment_path": "div.bbs_file a",
+
+      "article_ID": "articleNo",
+      "duplicate_check_key": "article_id",
+
+      "crawl_timeout": 30,
+      "crawl_delay": 0.5
+    },
+    {
+      "url": "https://adgraduate.kangwon.ac.kr/adgraduate/admission/notice.do?mode=list&&articleLimit=10&article.offset=0",
+      "description": "강원대 일반대학원 입시 공지",
+      "university": "강원대학교",
+      "department": "일반대학원 입시",
+      "category": "공지사항",
+
+      "page_id": "article.offset",
+      "page_start": 0,
+      "page_offset": 10,
+
+      "board_path": "div.b-title-box.b-notice a",
+
+      "title_path": "div.board_view h2",
+      "content_path": "div.view_cont",
+      "writer_path": "div.view_info li:nth-of-type(1)",
+      "date_path": "div.view_info li:nth-of-type(2)",
+      "attachment_path": "div.bbs_file a",
+
+      "article_ID": "articleNo",
+      "duplicate_check_key": "article_id",
+
+      "crawl_timeout": 30,
+      "crawl_delay": 0.5
+    },
+    {
+      "url": "https://wwwk.kangwon.ac.kr/www/selectBbsNttList.do?bbsNo=37&&pageUnit=10&key=1176&pageIndex=1",
+      "description": "강원대 학사안내 학사공지",
+      "university": "강원대학교",
+      "department": "학사안내",
+      "category": "공지사항",
+
+      "page_id": "pageIndex",
+      "page_start": 1,
+      "page_offset": 10,
+
+      "board_path": "td.subject a",
+
+      "title_path": "div.board_view h2",
+      "content_path": "div.bbs_cont",
+      "writer_path": "div.bbs_info li:nth-of-type(1)",
+      "date_path": "div.bbs_info li:nth-of-type(2)",
+      "attachment_path": "div.bbs_file a",
+
+      "article_ID": "nttNo",
+      "duplicate_check_key": "article_id",
+
+      "crawl_timeout": 30,
+      "crawl_delay": 0.5
+    },
+    {
+      "url": "https://wwwk.kangwon.ac.kr/www/selectBbsNttList.do?bbsNo=32&&pageUnit=10&key=199&pageIndex=1",
+      "description": "강원대 학사안내 재학생현황",
+      "university": "강원대학교",
+      "department": "학사안내",
+      "category": "재학생현황",
+
+      "page_id": "pageIndex",
+      "page_start": 1,
+      "page_offset": 1,
+
+      "board_path": "td.subject a",
+
+      "title_path": "div.board_view h2",
+      "content_path": "div.bbs_cont",
+      "writer_path": "div.bbs_info li:nth-of-type(1)",
+      "date_path": "div.bbs_info li:nth-of-type(2)",
+      "attachment_path": "div.bbs_file a",
+
+      "article_ID": "nttNo",
+      "duplicate_check_key": "article_id",
+
+      "crawl_timeout": 30,
+      "crawl_delay": 0.5
+    },
+    {
+      "url": "https://wwwk.kangwon.ac.kr/www/selectBbsNttList.do?bbsNo=81&&pageUnit=10&searchCtgry=전체%40%40춘천&key=277&pageIndex=1",
+      "description": "강원대 백령광장(춘천) 공지",
+      "university": "강원대학교",
+      "department": "백령광장(춘천)",
+      "category": "공지사항",
+
+      "page_id": "pageIndex",
+      "page_start": 1,
+      "page_offset": 10,
+
+      "board_path": "td.subject a",
+
+      "title_path": "div.bbd_view h2",
+      "content_path": "div.bbs_cont",
+      "writer_path": "div.bbs_info li:nth-of-type(1)",
+      "date_path": "div.bbs_info li:nth-of-type(2)",
+      "attachment_path": "div.bbs_file a",
+
+      "article_ID": "nttNo",
+      "duplicate_check_key": "article_id",
+
+      "crawl_timeout": 30,
+      "crawl_delay": 0.5
+    },
+    {
+      "url": "https://wwwk.kangwon.ac.kr/www/selectBbsNttList.do?bbsNo=38&&pageUnit=10&searchCtgry=전체%40%40춘천&key=279&pageIndex=1",
+      "description": "강원대 백령광장(춘천) 행사안내",
+      "university": "강원대학교",
+      "department": "백령광장(춘천)",
+      "category": "행사안내",
+
+      "page_id": "pageIndex",
+      "page_start": 1,
+      "page_offset": 10,
+
+      "board_path": "td.subject a",
+
+      "title_path": "div.bbs_view h3",
+      "content_path": "div.bbs_cont",
+      "writer_path": "div.bbs_info li:nth-of-type(1)",
+      "date_path": "div.bbs_info li:nth-of-type(2)",
+      "attachment_path": "div.bbs_file a",
+
+      "article_ID": "nttNo",
+      "duplicate_check_key": "article_id",
+
+      "crawl_timeout": 30,
+      "crawl_delay": 0.5
+    },
+    {
+      "url": "https://wwwk.kangwon.ac.kr/www/selectBbsNttList.do?bbsNo=39&&pageUnit=10&searchCtgry=전체%40%40춘천&key=280&pageIndex=1",
+      "description": "강원대 백령광장(춘천) 인사/채용",
+      "university": "강원대학교",
+      "department": "백령광장(춘천)",
+      "category": "인사/채용",
+
+      "page_id": "pageIndex",
+      "page_start": 1,
+      "page_offset": 10,
+
+      "board_path": "td.subject a",
+
+      "title_path": "div.bbs_view h2",
+      "content_path": "div.bbs_cont",
+      "writer_path": "div.bbs_info li:nth-of-type(1)",
+      "date_path": "div.bbs_info li:nth-of-type(2)",
+      "attachment_path": "div.bbs_file a",
+
+      "article_ID": "nttNo",
+      "duplicate_check_key": "article_id",
+
+      "crawl_timeout": 30,
+      "crawl_delay": 0.5
+    },
+    {
+      "url": "https://wwwk.kangwon.ac.kr/www/selectBbsNttList.do?bbsNo=117&&pageUnit=10&searchCtgry=춘천&key=768&pageIndex=1",
+      "description": "강원대 백령광장(춘천) 채용정보",
+      "university": "강원대학교",
+      "department": "백령광장(춘천)",
+      "category": "채용정보",
+
+      "page_id": "pageIndex",
+      "page_start": 1,
+      "page_offset": 10,
+
+      "board_path": "td.subject a",
+
+      "title_path": "div.bbs_view h2",
+      "content_path": "div.bbs_cont",
+      "writer_path": "div.bbs_info li:nth-of-type(1)",
+      "date_path": "div.bbs_info li:nth-of-type(2)",
+      "attachment_path": "div.board_file a",
+
+      "article_ID": "nttNo",
+      "duplicate_check_key": "article_id",
+
+      "crawl_timeout": 30,
+      "crawl_delay": 0.5
+    },
+    {
+      "url": "https://wwwk.kangwon.ac.kr/www/selectBbsNttList.do?bbsNo=345&&pageUnit=10&key=1959&pageIndex=1",
+      "description": "강원대 백령광장(춘천) 공모모집",
+      "university": "강원대학교",
+      "department": "백령광장(춘천)",
+      "category": "공모모집",
+
+      "page_id": "pageIndex",
+      "page_start": 1,
+      "page_offset": 10,
+
+      "board_path": "td.subject a",
+
+      "title_path": "div.bbs_view h2",
+      "content_path": "div.bbs_cont",
+      "writer_path": "div.bbs_info li:nth-of-type(1)",
+      "date_path": "div.bbs_info li:nth-of-type(2)",
+      "attachment_path": "div.bbs_file a",
+
+      "article_ID": "nttNo",
+      "duplicate_check_key": "article_id",
+
+      "crawl_timeout": 30,
+      "crawl_delay": 0.5
+    },
+    {
+      "url": "https://cse.kangwon.ac.kr/cse/career/career-info.do?mode=list&&articleLimit=10&article.offset=0",
+      "description": "강원대 컴퓨터공학과 취업정보",
       "university": "강원대학교",
       "department": "컴퓨터공학과",
-      "category": "학부 공지사항",
+      "category": "취업정보",
+
+      "page_id": "article.offset",
+      "page_start": 0,
+      "page_offset": 10,
+
+      "board_path": "div.b-title-box.b-notice a",
+
+      "title_path": "div.view_title h2",
+      "content_path": "div.view_cont",
+      "writer_path": "div.view_info li:nth-of-type(1)",
+      "date_path": "div.view_info li:nth-of-type(2)",
+      "attachment_path": "div.bbs_file a",
+
+      "article_ID": "articleNo",
+      "duplicate_check_key": "article_id",
+
+      "crawl_timeout": 30,
+      "crawl_delay": 0.5
+    },
+    {
+      "url": "https://cse.kangwon.ac.kr/cse/curriculum/under-curriculum.do?mode=list&&articleLimit=10&article.offset=0",
+      "description": "강원대 컴퓨터공학과 교육과정",
+      "university": "강원대학교",
+      "department": "컴퓨터공학과",
+      "category": "교육과정",
 
       "page_id": "article.offset",
       "page_start": 0,
@@ -63,13 +2628,63 @@
 
       "board_path": "div.b-title-box a",
 
-      "title_path": ".b-title-box span:not([class])",
-      "content_path": "div.b-content-box div.fr-view",
-      "writer_path": ".b-writer-box span:last-child",
-      "date_path": ".b-date-box span:last-child",
-      "attachment_path": ".b-file-box a.file-down-btn",
+      "title_path": "div.view_title h2",
+      "content_path": "div.view_cont",
+      "writer_path": "div.view_info li:nth-of-type(1)",
+      "date_path": "div.view_info li:nth-of-type(2)",
+      "attachment_path": "div.bbs_file a",
 
       "article_ID": "articleNo",
+      "duplicate_check_key": "article_id",
+
+      "crawl_timeout": 30,
+      "crawl_delay": 0.5
+    },
+    {
+      "url": "https://cse.kangwon.ac.kr/cse/community/scholarship.do?mode=list&&articleLimit=10&article.offset=0",
+      "description": "강원대 컴퓨터공학과 장학안내",
+      "university": "강원대학교",
+      "department": "컴퓨터공학과",
+      "category": "장학안내",
+
+      "page_id": "article.offset",
+      "page_start": 0,
+      "page_offset": 10,
+
+      "board_path": "div.b-title-box.b-notice a",
+
+      "title_path": "div.view_title h2",
+      "content_path": "div.view_cont",
+      "writer_path": "div.view_info li:nth-of-type(1)",
+      "date_path": "div.view_info li:nth-of-type(2)",
+      "attachment_path": "div.bbs_file a",
+
+      "article_ID": "articleNo",
+      "duplicate_check_key": "article_id",
+
+      "crawl_timeout": 30,
+      "crawl_delay": 0.5
+    },
+    {
+      "url": "https://wwwk.kangwon.ac.kr/itservice/selectBbsNttList.do?bbsNo=107&&pageUnit=10&key=735&pageIndex=1",
+      "description": "강원대 정보화본부 공지사항",
+      "university": "강원대학교",
+      "department": "정보화본부",
+      "category": "공지사항",
+
+      "page_id": "pageIndex",
+      "page_start": 1,
+      "page_offset": 1,
+
+      "board_path": "td.subject a",
+
+      "title_path": "div.bbs_view h2",
+      "content_path": "div.bbs_cont",
+      "writer_path": "div.bbs_info li:nth-of-type(1)",
+      "date_path": "div.bbs_info li:nth-of-type(2)",
+      "attachment_path": "div.bbs_file a",
+
+      "article_ID": "nttNo",
       "duplicate_check_key": "article_id",
 
       "crawl_timeout": 30,
