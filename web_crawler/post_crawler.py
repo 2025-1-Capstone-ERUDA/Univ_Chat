@@ -20,6 +20,9 @@ class PostExtractor:
         if article_id_key is None:
             raise ValueError("사이트 설정에 'article_ID' 키가 없습니다.")
         
+        if article_id_key == 'None':
+            return None
+        
         article_id = query.get(article_id_key)
         if not article_id:
             raise ValueError(f"게시물 번호를 찾을 수 없습니다: {url}")
@@ -94,7 +97,7 @@ if __name__ == "__main__":
     from crawler_utils import CrawlerUtils
     
     print("=== PostExtractor 테스트 ===\n")
-    site = ConfigLoader.load_urls()[1]  # 컴퓨터공학과 사이트 정보로 로드(json 파일보고 인덱스 설정 확인)
+    site = ConfigLoader.load_urls()[0]  # 컴퓨터공학과 사이트 정보로 로드(json 파일보고 인덱스 설정 확인)
     url1 = "https://cse.kangwon.ac.kr/cse/community/undergraduate-notice.do?mode=view&articleNo=524640&article.offset=0&articleLimit=10#!/list"
     html1 = CrawlerUtils.make_request(url1)
     post_extractor = PostExtractor("https://cse.kangwon.ac.kr")
