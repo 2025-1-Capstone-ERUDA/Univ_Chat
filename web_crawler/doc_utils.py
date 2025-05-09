@@ -47,15 +47,65 @@ class AttachmentProcessor:
         
     def pdf_extractor(self, file_path: str) -> str:
         """PDF 파일에서 텍스트를 추출합니다."""
-        return "pdf text"
+        try:
+            import fitz  # PyMuPDF
+            doc = fitz.open(file_path)
+            text = ""
+            for page in doc:
+                text += page.get_text()
+            return text.strip()
+        except Exception as e:
+            return f"[❌ PDF 추출 실패: {e}]"
     
     def docx_extractor(self, file_path: str) -> str:
         """DOCX 파일에서 텍스트를 추출합니다."""
-        return "docx text"
+        try:
+            from docx import Document
+            doc = Document(file_path)
+
+            texts = []
+
+            # 일반 문단 추출
+            for para in doc.paragraphs:
+                if para.text.strip():
+                    texts.append(para.text.strip())
+
+            # 표 안 단락까지 추출
+            for table in doc.tables:
+                for row in table.rows:
+                    for cell in row.cells:
+                        for para in cell.paragraphs:
+                            if para.text.strip():
+                                texts.append(para.text.strip())
+
+            # 중복 줄 제거 + 정렬 유지
+            seen = set()
+            cleaned_texts = []
+            for line in texts:
+                if line not in seen:
+                    seen.add(line)
+                    cleaned_texts.append(line)
+
+            return "\n".join(cleaned_texts).strip()
+
+        except Exception as e:
+            return f"[❌ DOCX 추출 실패: {e}]"
     
     def txt_extractor(self, file_path: str) -> str:
         """TXT 파일에서 텍스트를 추출합니다."""
-        return "txt text"
+        try:
+            with open(file_path, "r", encoding="utf-8") as f:
+                return f.read().strip()
+        except UnicodeDecodeError:
+            # CP949 (euc-kr)로 재시도: 윈도우에서 저장된 텍스트 파일 대응
+            try:
+                with open(file_path, "r", encoding="cp949") as f:
+                    return f.read().strip()
+            except Exception as e:
+                return f"[❌ TXT 추출 실패 (인코딩 오류): {e}]"
+        except Exception as e:
+            return f"[❌ TXT 추출 실패: {e}]"
+
     
     def hwp_extractor(self, file_path: str) -> str:
         """HWP 파일에서 텍스트를 추출합니다."""
@@ -141,8 +191,8 @@ if __name__ == "__main__":
     hwp_url = "https://cse.kangwon.ac.kr/cse/community/undergraduate-notice.do?mode=download&articleNo=501724&attachNo=537931"
     hwpx_url = ""
     xlsx_url = "https://cse.kangwon.ac.kr/cse/community/undergraduate-notice.do?mode=download&articleNo=516526&attachNo=539616"
-    pdf_url = "https://cse.kangwon.ac.kr/cse/community/undergraduate-notice.do?mode=download&articleNo=516526&attachNo=539615"
-    docx_url = ""
+    pdf_url = "https://cse.kangwon.ac.kr/cse/community/undergraduate-notice.do?mode=download&articleNo=422496&attachNo=514871"
+    docx_url = "https://wwwk.kangwon.ac.kr/www/downloadBbsFile.do?atchmnflNo=103343&bbsNo=34&nttNo=176921&&pageUnit=10&key=232&pageIndex=8"
     txt_url = ""
     image_url = "https://cse.kangwon.ac.kr/cse/community/undergraduate-notice.do?mode=download&articleNo=441793&attachNo=484103"
     error_url = "https://cse.kangwon.ac.kr/cse/community/undergraduate-notice.do?mode=download&articleNo=364536&attachNo=367495"
@@ -154,7 +204,7 @@ if __name__ == "__main__":
         # pdf_url,
         # docx_url,
         # txt_url,
-        image_url,
+        # image_url,
         # error_url
     ]
 
