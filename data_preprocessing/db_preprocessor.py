@@ -5,7 +5,7 @@ from bs4 import BeautifulSoup
 from datetime import datetime
 import csv
 
-# [최종 수정 확인용] 2025-04-28
+# [최종 수정 확인용] 2025-05-09
 
 # === 전처리 세부 함수 정의 ===
 
@@ -57,6 +57,22 @@ def replace_urls(text: str) -> str:
 def normalize_spaces(text: str) -> str:
     return re.sub(r"\s+", " ", text).strip()
 
+# 작성자 레이블 제거
+def clean_writer(text: str) -> str:
+    if pd.isnull(text): return text
+    text = str(text).strip()
+    return re.sub(r'^\s*작성자\s*[:：]?\s*', '', text)
+
+# 작성일에서 날짜만 추출
+def extract_date(text: str) -> str:
+    if pd.isnull(text): return text
+    text = str(text)
+    date_pattern = re.compile(
+        r'(\d{4}[./-]\d{1,2}[./-]\d{1,2}(?:\s+\d{1,2}:\d{2})?|\d{2}[./-]\d{1,2}[./-]\d{1,2})'
+    )
+    match = date_pattern.search(text)
+    return match.group(0).strip() if match else ''
+
 # === 메인 전처리 함수 ===
 def clean_text_advanced(text: str) -> str:
     if not isinstance(text, str) or not text.strip():
@@ -84,6 +100,12 @@ def preprocess_and_save(df: pd.DataFrame) -> pd.DataFrame:
     df = df.copy()
     df['content'] = df['content'].apply(clean_text_advanced)
 
+    if 'author' in df.columns:
+        df['author'] = df['author'].apply(clean_writer)
+
+    if 'date' in df.columns:
+        df['date'] = df['date'].apply(extract_date)
+
     # 상위 디렉토리 기준으로 경로 설정
     base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
     output_dir = os.path.join(base_dir, "processing")
@@ -102,7 +124,7 @@ if __name__ == "__main__":
     base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
     # 처리할 파일 경로 지정
-    input_filename = "posts_2025-04-14_0629.csv"
+    input_filename = "posts_2025-04-30_2230.csv"
     input_path = os.path.join(base_dir, "data", input_filename)
 
     # CSV 읽고 전처리
