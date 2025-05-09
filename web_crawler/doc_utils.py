@@ -22,9 +22,13 @@ class AttachmentProcessor:
         FileUtils._ensure_directory(self.download_dir)
 
     def download_file(self, url):
-        
+        import urllib3
+        urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning) # 경고 문구 생략
+
         try:
-            response = requests.get(url)
+            response = requests.get(url, verify=False)
+
+            # Content-Disposition 헤더에서 파일명 추출
             cd = response.headers.get('Content-Disposition', '')
             filename_match = re.search(r'filename\*?=[\'"]?(?:UTF-8\'\')?([^\'";]+)', cd)
             
@@ -32,12 +36,16 @@ class AttachmentProcessor:
                 encoded_name = filename_match.group(1)
                 decoded_name = unquote(encoded_name)
             else:
-                raise ValueError("파일 이름을 찾을 수 없습니다.")
+                # URL에서 파일명 추출
+                decoded_name = os.path.basename(url)
+                if not decoded_name:
+                    raise ValueError("파일 이름을 찾을 수 없습니다.")
                 
             # print(f"파일명: {decoded_name}")
 
             file_path = os.path.join(self.download_dir, decoded_name)
-            open(file_path, "wb").write(response.content)
+            with open(file_path, "wb") as f:
+                f.write(response.content)
 
             print(f"✅ 다운로드 완료: {file_path}")
             return file_path
@@ -191,7 +199,7 @@ if __name__ == "__main__":
     hwp_url = "https://cse.kangwon.ac.kr/cse/community/undergraduate-notice.do?mode=download&articleNo=501724&attachNo=537931"
     hwpx_url = ""
     xlsx_url = "https://cse.kangwon.ac.kr/cse/community/undergraduate-notice.do?mode=download&articleNo=516526&attachNo=539616"
-    pdf_url = "https://cse.kangwon.ac.kr/cse/community/undergraduate-notice.do?mode=download&articleNo=422496&attachNo=514871"
+    pdf_url = "https://duribot.kangwon.ac.kr/chatbot/uploadFile/knu/RD_025.pdf"
     docx_url = "https://wwwk.kangwon.ac.kr/www/downloadBbsFile.do?atchmnflNo=103343&bbsNo=34&nttNo=176921&&pageUnit=10&key=232&pageIndex=8"
     txt_url = ""
     image_url = "https://cse.kangwon.ac.kr/cse/community/undergraduate-notice.do?mode=download&articleNo=441793&attachNo=484103"
@@ -201,7 +209,7 @@ if __name__ == "__main__":
         # hwp_url,
         # hwpx_url,
         # xlsx_url,
-        # pdf_url,
+        pdf_url,
         # docx_url,
         # txt_url,
         # image_url,
