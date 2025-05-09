@@ -201,7 +201,7 @@ if __name__ == "__main__":
     xlsx_url = "https://cse.kangwon.ac.kr/cse/community/undergraduate-notice.do?mode=download&articleNo=516526&attachNo=539616"
     pdf_url = "https://duribot.kangwon.ac.kr/chatbot/uploadFile/knu/RD_025.pdf"
     docx_url = "https://wwwk.kangwon.ac.kr/www/downloadBbsFile.do?atchmnflNo=103343&bbsNo=34&nttNo=176921&&pageUnit=10&key=232&pageIndex=8"
-    txt_url = ""
+    txt_url = "https://jw.kangwon.ac.kr/jw/community/notice.do?mode=download&articleNo=365222&attachNo=368559"
     image_url = "https://cse.kangwon.ac.kr/cse/community/undergraduate-notice.do?mode=download&articleNo=441793&attachNo=484103"
     error_url = "https://cse.kangwon.ac.kr/cse/community/undergraduate-notice.do?mode=download&articleNo=364536&attachNo=367495"
     
@@ -209,9 +209,9 @@ if __name__ == "__main__":
         # hwp_url,
         # hwpx_url,
         # xlsx_url,
-        pdf_url,
+        # pdf_url,
         # docx_url,
-        # txt_url,
+        txt_url,
         # image_url,
         # error_url
     ]
