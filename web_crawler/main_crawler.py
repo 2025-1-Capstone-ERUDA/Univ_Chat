@@ -99,8 +99,10 @@ class NoticeCrawler:
                                        self.existing_df["category"].astype(str)))
 
         for post_element in posts:
-            title = "".join(post_element.stripped_strings).strip()
             href = post_element.get("href")
+            # print(f"    post_element: {post_element}")
+            # print(f"    href: {href}")
+            # print("="*10)
 
             full_url = CrawlerUtils.get_full_url(base_url, href)
 

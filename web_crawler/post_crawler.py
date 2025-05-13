@@ -39,19 +39,20 @@ class PostExtractor:
             title_selector = site.get("title_path")
             title_tag = soup.select_one(title_selector)
             title = title_tag.get_text(strip=True) if title_tag else None
-            # print(f"    📜 제목: {title}")
+            print(f"    📜 제목: {title}")
 
             # 작성자 추출
             writer_selector = site.get("writer_path")
             writer_tag = soup.select_one(writer_selector)
             author = writer_tag.text.strip() if writer_tag else None
-            # print(f"    ✍️ 작성자: {author}")
+            print(f"    ✍️ 작성자: {author}")
 
             # 게시 날짜 추출
             date_selector = site.get("date_path")
             date_tag = soup.select_one(date_selector)
+            # print(f"    📅 날짜 선택자: {date_tag}")
             date = date_tag.text.strip() if date_tag else None
-            # print(f"    📅 날짜: {date}")
+            print(f"    📅 날짜: {date}")
             
             # 본문 추출
             content_selector = site.get("content_path")
@@ -61,18 +62,18 @@ class PostExtractor:
                 content = content.replace("\u00a0", " ")  # `NBSP` 제거
             else:
                 content = "no content"
-            # print(f"    📄 내용: {content[:10]}")
+            print(f"    📄 내용: {content[:100]}")
 
             # 첨부파일 추출
             attachment_selector = site.get("attachment_path")
             attachment_tags = soup.select(attachment_selector)
             attachments = [CrawlerUtils.get_full_url(self.base_url, a['href'])
                            for a in attachment_tags if a.has_attr('href')]
-            # print(f"    📎 첨부파일: {attachments}")
+            print(f"    📎 첨부파일: {attachments}")
 
             # 게시글 번호 추출
             article_id = self.extract_articleID(post_url, site)
-            # print(f"    🆔 게시물 번호: {article_id}")
+            print(f"    🆔 게시물 번호: {article_id}")
 
             return {
                 "title": title,
