@@ -2,10 +2,19 @@
 import os
 import torch
 import pandas as pd
-from llama_index.core.schema import Document
-from llama_index.core import VectorStoreIndex, Settings
-from llama_index.core import VectorStoreIndex, StorageContext, load_index_from_storage
-from llama_index.embeddings.huggingface import HuggingFaceEmbedding
+from langchain.schema import Document
+from langchain_huggingface import HuggingFaceEmbeddings
+from langchain_community.vectorstores import FAISS
+
+# CPU/GPU 사용 설정
+device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+
+# 임베딩 모델 초기화
+embedding_model = HuggingFaceEmbeddings(
+    model_name="upskyy/kf-deberta-multitask",       # 한국어 문장과 단락에 특화된 모델
+    model_kwargs={'device': f'{device}'},
+    encode_kwargs={"normalize_embeddings": True}
+)
 
 def dataframe_to_documents(df):
     """Pandas DataFrame을 LlamaIndex Document 리스트로 변환"""
@@ -25,70 +34,69 @@ def dataframe_to_documents(df):
         {row['content']}
         """
         doc = Document(
-            text=content.strip(),
+            page_content=content.strip(),
             metadata={key: row[key] for key in ['title', 'date', 'author', 'articleNo', 'link', 'attachments', 'university', 'department']}
         )
         documents.append(doc)
         
     return documents
 
-def configure_embedding_model():
-    """임베딩 모델 설정 (KoBERT 기반)"""
-    
-    Settings.embed_model = HuggingFaceEmbedding(
-        model_name="jhgan/ko-sroberta-multitask",
-        device="cuda" if torch.cuda.is_available() else "cpu"
-    )
+def save_faiss(documents: list, dir_path: str):
+    """
+    Document 객체 리스트를 임베딩하여 FAISS DB에 저장.
+    기존 FAISS DB가 존재 시 임베딩 결과를 결합
 
-def make_index(df):
-    """DataFrame으로부터 VectorStoreIndex 생성"""
-    
-    configure_embedding_model()
-    documents = dataframe_to_documents(df)
-    
-    index = VectorStoreIndex.from_documents(documents)
-    
-    return index
+    Params:
+    documents: Document 객체 리스트
 
-def save_index(index, dir_path):
-    """VectorStoreIndex를 지정 디렉토리에 저장"""
-    
-    os.makedirs(dir_path, exist_ok=True)
-    
+    Return:
+    dir_path: FAISS DB 저장 경로
+    """
+
     try:
-        index.storage_context.persist(persist_dir=dir_path)
-        print(f"✅ Index saved: {dir_path}")
+        faiss_vectorstore = FAISS.from_documents(documents, embedding_model)
+
+        faiss_vectorstore.save_local(dir_path)
+        print(f"✅ FAISS DB 저장 완료: {dir_path}")
         
         return dir_path
     except Exception as e:
-        print(f"❌ 저장 실패: {e}")
+        print(f"FAISS 저장 오류: {e}")
         return None
 
-def load_index(dir_path):
-    """VectorStoreIndex를 파일로부터 로드"""
-    
+def load_faiss(dir_path: str) -> bool:
+    """
+    주어진 디렉토리에서 FAISS DB를 로드하여 vectorstore를 반환.
+
+    Return:
+    성공 시: FAISS vectorstore 객체
+    실패 시: None
+    """
+
     try:
-        storage_context = StorageContext.from_defaults(persist_dir=dir_path)
-        index = load_index_from_storage(storage_context)
-        print(f"✅ Index loaded: {dir_path}")
-        
-        return index
+        vectorstore = FAISS.load_local(
+            folder_path=dir_path,
+            embeddings=embedding_model,
+            allow_dangerous_deserialization=True,
+        )
     except Exception as e:
-        print(f"❌ 로드 실패: {e}")
+        print(f"FAISS DB 로드 오류: {e}")
         return None
+    
+    return vectorstore
 
 # 테스트 실행
 if __name__ == "__main__":
     csv_path = os.path.join(os.path.dirname(__file__), "..", "data", "posts_2025-04-28_1501.csv")
     df = pd.read_csv(csv_path, encoding="utf-8-sig")
+    
+    documents = dataframe_to_documents(df)
 
-    index = make_index(df)
-
-    out_dir = os.path.join(os.path.dirname(__file__), "..", "vectorstore")
-    dir_path = save_index(index, out_dir)
-
-    loaded_index = load_index(dir_path)
-    if loaded_index:
-        print("VectorStoreIndex 로드 성공")
+    dir_path = os.path.join(os.path.dirname(__file__), "..", "vectorstore")
+    
+    db_path = save_faiss(documents, dir_path)
+    vectorstore = load_faiss(db_path)
+    if vectorstore:
+        print("FAISS DB 로드 성공")
     else:
-        print("VectorStoreIndex 로드 실패")
+        print("FAISS DB 로드 실패")
