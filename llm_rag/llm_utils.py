@@ -5,8 +5,6 @@ import json
 import yaml
 from llama_index.core.prompts import PromptTemplate
 
-import embedding
-
 # YAML 파일에서 프롬프트 불러오기
 def load_prompts(filepath):
     with open(filepath, "r", encoding="utf-8") as f:
@@ -55,7 +53,7 @@ def llm_prompt(user_query: str, documents: list) -> str:
     llm_prompt = PromptTemplate(prompts["llm_prompt"])
     
     # 템플릿 채우기
-    prompt_text = llm_prompt.format(user_query=user_query, documents=documents)
+    prompt_text = llm_prompt.format(user_query=user_query, document_content=documents)
     
     return prompt_text
 
@@ -91,3 +89,18 @@ if __name__ == "__main__":
     response = llm_response(query_text)
     
     print(f"LLM 응답:\n{response}")
+    
+    # 문서 검색
+    from embedding import load_faiss
+    from rag_utils import search_documents
+    dir_path = os.path.join(os.path.dirname(__file__), "..", "vectorstore")
+    vectorstore = load_faiss(dir_path)
+    documents = search_documents(query_text, vectorstore)
+    doc_texts = "\n".join([doc.page_content for doc in documents])
+    
+    # LLM 프롬프트 생성
+    llm_query_text = llm_prompt(user_query, doc_texts)
+    print(f"LLM 프롬프트 템플릿:\n{llm_query_text}\n")
+    # LLM 응답
+    llm_response = llm_response(llm_query_text)
+    print(f"LLM 응답:\n{llm_response}")
