@@ -70,35 +70,29 @@ class AttachmentProcessor:
         try:
             from docx import Document
             doc = Document(file_path)
+            document_element = doc._element.body
 
             texts = []
 
-            # 일반 문단 추출
-            for para in doc.paragraphs:
-                if para.text.strip():
-                    texts.append(para.text.strip())
+            for child in document_element:
+                if child.tag.endswith('}p'):  # 일반 문단
+                    texts.append(''.join([r.text or '' for r in child.iter() if r.tag.endswith('}t')]))
+                elif child.tag.endswith('}tbl'):  # 표
+                    for row in child.iter():
+                        if row.tag.endswith('}tr'):
+                            row_text = []
+                            for cell in row.iter():
+                                if cell.tag.endswith('}tc'):
+                                    cell_text = ''.join([t.text or '' for t in cell.iter() if t.tag.endswith('}t')])
+                                    row_text.append(cell_text)
+                            if row_text:
+                                texts.append('\t'.join(row_text))
 
-            # 표 안 단락까지 추출
-            for table in doc.tables:
-                for row in table.rows:
-                    for cell in row.cells:
-                        for para in cell.paragraphs:
-                            if para.text.strip():
-                                texts.append(para.text.strip())
-
-            # 중복 줄 제거 + 정렬 유지
-            seen = set()
-            cleaned_texts = []
-            for line in texts:
-                if line not in seen:
-                    seen.add(line)
-                    cleaned_texts.append(line)
-
-            return "\n".join(cleaned_texts).strip()
+            return '\n'.join([t for t in texts if t.strip()])
 
         except Exception as e:
             return f"[❌ DOCX 추출 실패: {e}]"
-    
+        
     def txt_extractor(self, file_path: str) -> str:
         """TXT 파일에서 텍스트를 추출합니다."""
         try:
@@ -175,6 +169,10 @@ class AttachmentProcessor:
 
             else:
                 return f"[지원되지 않는 파일 형식: {ext}]"
+            
+            # ✅ 공통 후처리 적용 (제어문자 제거 등)
+            return self.remove_control_chars(text.strip())
+        
         except Exception as e:
             return f"[텍스트 추출 실패: {e}]"
 
@@ -193,6 +191,10 @@ class AttachmentProcessor:
                 results[url] = None
         return results
     
+    def remove_control_chars(self, text: str) -> str:
+        """텍스트 내 SOH 포함 모든 제어문자 제거 (줄바꿈, 탭은 유지)"""
+        return ''.join(c for c in text if ord(c) >= 32 or c in '\n\t')
+    
 # 테스트용 코드
 if __name__ == "__main__":  
     # 테스트용 URL 목록
@@ -210,8 +212,8 @@ if __name__ == "__main__":
         # hwpx_url,
         # xlsx_url,
         # pdf_url,
-        # docx_url,
-        txt_url,
+        docx_url,
+        # txt_url,
         # image_url,
         # error_url
     ]
