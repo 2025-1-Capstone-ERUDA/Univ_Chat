@@ -88,6 +88,7 @@ def extract_date(text: str) -> str:
             return f"{y}.{m}.{d} {h.zfill(2)}:{mi.zfill(2)}"
         else:
             return f"{y}.{m}.{d}"
+        
     # 기존 숫자 기반 날짜 형식 처리 (예: 2024.05.13, 23/12/01 10:00 등)
     date_pattern = re.compile(
         r'(\d{4}[./-]\d{1,2}[./-]\d{1,2}(?:\s+\d{1,2}:\d{2})?|'
@@ -123,11 +124,19 @@ def preprocess_and_save(df: pd.DataFrame) -> pd.DataFrame:
     df = df.copy()
     df['content'] = df['content'].apply(clean_text_advanced)
 
+    # '[본문 없음]', 'no content' 본문을 None으로 치환
+    # df['content'] = df['content'].apply(
+    #    lambda x: None if isinstance(x, str) and x.strip().lower() in ["[본문 없음]", "no content"] else x
+    # )
+
     if 'author' in df.columns:
         df['author'] = df['author'].apply(clean_writer)
 
     if 'date' in df.columns:
         df['date'] = df['date'].apply(extract_date)
+
+    # === 전체 결측치를 None으로 치환 ===
+    # df = df.where(pd.notnull(df), None)
 
     # 상위 디렉토리 기준으로 경로 설정
     base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
