@@ -5,7 +5,7 @@ from bs4 import BeautifulSoup
 from datetime import datetime
 import csv
 
-# [최종 수정 확인용] 2025-05-09
+# [최종 수정 확인용] 2025-05-16
 
 # === 전처리 세부 함수 정의 ===
 
@@ -67,8 +67,31 @@ def clean_writer(text: str) -> str:
 def extract_date(text: str) -> str:
     if pd.isnull(text): return text
     text = str(text)
+
+    # 1. 한글 날짜 형식 처리
+    hangul_pattern = re.compile(
+        r'(?P<year>\d{4})년\s*(?P<month>\d{1,2})월\s*(?P<day>\d{1,2})일'
+        r'(?:\s*(?P<hour>\d{1,2})시\s*(?P<minute>\d{1,2})분(?:\s*(?P<second>\d{1,2})초)?)?'
+    )
+    match = hangul_pattern.search(text)
+    if match:
+        y = match.group("year")
+        m = match.group("month").zfill(2)
+        d = match.group("day").zfill(2)
+        h = match.group("hour")
+        mi = match.group("minute")
+        s = match.group("second")
+
+        if h and mi and s:
+            return f"{y}.{m}.{d} {h.zfill(2)}:{mi.zfill(2)}:{s.zfill(2)}"
+        elif h and mi:
+            return f"{y}.{m}.{d} {h.zfill(2)}:{mi.zfill(2)}"
+        else:
+            return f"{y}.{m}.{d}"
+    # 기존 숫자 기반 날짜 형식 처리 (예: 2024.05.13, 23/12/01 10:00 등)
     date_pattern = re.compile(
-        r'(\d{4}[./-]\d{1,2}[./-]\d{1,2}(?:\s+\d{1,2}:\d{2})?|\d{2}[./-]\d{1,2}[./-]\d{1,2})'
+        r'(\d{4}[./-]\d{1,2}[./-]\d{1,2}(?:\s+\d{1,2}:\d{2})?|'
+        r'\d{2}[./-]\d{1,2}[./-]\d{1,2})'
     )
     match = date_pattern.search(text)
     return match.group(0).strip() if match else ''
@@ -124,7 +147,7 @@ if __name__ == "__main__":
     base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
     # 처리할 파일 경로 지정
-    input_filename = "posts_2025-04-30_2230.csv"
+    input_filename = "posts_2025-05-13_0120.csv"
     input_path = os.path.join(base_dir, "data", input_filename)
 
     # CSV 읽고 전처리
