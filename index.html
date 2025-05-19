@@ -36,6 +36,8 @@
             padding: 10px;
             border: 1px solid #ccc;
             min-height: 50px;
+            text-align: left; /* 답변 가독성 위해 왼쪽 정렬 */
+            white-space: pre-wrap; /* 공백 및 줄바꿈 보존 */
         }
         label {
             font-weight: bold;
@@ -55,6 +57,9 @@
     <textarea id="inputText" placeholder="여기에 질문을을 입력하세요"></textarea>
     <button onclick="processText()">질문하기</button>
     <div id="result">결과가 여기에 표시됩니다.</div>
+
+    <!-- marked.js CDN 추가 -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 
     <script>
         async function processText() {
@@ -77,7 +82,8 @@
                 }
 
                 const data = await response.json();
-                resultDiv.textContent = data.result || '결과가 없습니다.';
+                // Markdown을 HTML로 변환 후 삽입
+                resultDiv.innerHTML = marked.parse(data.result || '결과가 없습니다.');
             } catch (error) {
                 resultDiv.textContent = '오류: ' + error.message;
             }
