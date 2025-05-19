@@ -4,16 +4,14 @@
 # 적절하게 import 문 추가
 import os
 import re
-import olefile
-import zipfile
-import xml.etree.ElementTree as ET
 from PIL import Image
 import easyocr
 import numpy as np
 import requests
-import fitz  # PyMuPDF
-from docx import Document
 from urllib.parse import unquote
+
+import zipfile
+import xml.etree.ElementTree as ET
 
 # 라이브러리 설치 후 requirements.txt에 추가 필수
 from file_utils import FileUtils
@@ -26,10 +24,14 @@ class AttachmentProcessor:
         self.download_dir = download_dir
         FileUtils._ensure_directory(self.download_dir)
 
+    def remove_control_chars(self, text: str) -> str:
+        # 텍스트 내 SOH 포함 모든 제어문자 제거 (줄바꿈, 탭은 유지) 
+        return ''.join(c for c in text if ord(c) >= 32 or c in '\n\t')
+
     def download_file(self, url):
         
         try:
-            response = requests.get(url, verify=False)
+            response = requests.get(url)
             cd = response.headers.get('Content-Disposition', '')
             filename_match = re.search(r'filename\*?=[\'"]?(?:UTF-8\'\')?([^\'";]+)', cd)
             
@@ -37,15 +39,12 @@ class AttachmentProcessor:
                 encoded_name = filename_match.group(1)
                 decoded_name = unquote(encoded_name)
             else:
-                decoded_name = os.path.basename(url)
-                if not decoded_name:
-                    raise ValueError("파일 이름을 찾을 수 없습니다.")
+                raise ValueError("파일 이름을 찾을 수 없습니다.")
                 
             # print(f"파일명: {decoded_name}")
 
             file_path = os.path.join(self.download_dir, decoded_name)
-            with open(file_path, "wb") as f:
-                f.write(response.content)
+            open(file_path, "wb").write(response.content)
 
             print(f"✅ 다운로드 완료: {file_path}")
             return file_path
@@ -54,7 +53,7 @@ class AttachmentProcessor:
             return None
         
     def pdf_extractor(self, file_path: str) -> str:
-        """PDF 파일에서 텍스트를 추출합니다."""
+        import fitz
         try:
             doc = fitz.open(file_path)
             text = ""
@@ -66,65 +65,72 @@ class AttachmentProcessor:
     
     def docx_extractor(self, file_path: str) -> str:
         """DOCX 파일에서 텍스트를 추출합니다."""
-        try:
-            doc = Document(file_path)
-
-            texts = []
-
-            # 일반 문단 추출
-            for para in doc.paragraphs:
-                if para.text.strip():
-                    texts.append(para.text.strip())
-
-            # 표 안 단락까지 추출
-            for table in doc.tables:
-                for row in table.rows:
-                    for cell in row.cells:
-                        for para in cell.paragraphs:
-                            if para.text.strip():
-                                texts.append(para.text.strip())
-
-            # 중복 줄 제거 + 정렬 유지
-            seen = set()
-            cleaned_texts = []
-            for line in texts:
-                if line not in seen:
-                    seen.add(line)
-                    cleaned_texts.append(line)
-
-            return "\n".join(cleaned_texts).strip()
-
-        except Exception as e:
-            return f"[❌ DOCX 추출 실패: {e}]"
+        return "docx text"
     
     def txt_extractor(self, file_path: str) -> str:
         """TXT 파일에서 텍스트를 추출합니다."""
-        try:
-            with open(file_path, "r", encoding="utf-8") as f:
-                return f.read().strip()
-        except UnicodeDecodeError:
-            # CP949 (euc-kr)로 재시도: 윈도우에서 저장된 텍스트 파일 대응
-            try:
-                with open(file_path, "r", encoding="cp949") as f:
-                    return f.read().strip()
-            except Exception as e:
-                return f"[❌ TXT 추출 실패 (인코딩 오류): {e}]"
-        except Exception as e:
-            return f"[❌ TXT 추출 실패: {e}]"
+        return "txt text"
     
     def hwp_extractor(self, file_path: str) -> str:
-        """HWP 파일에서 텍스트를 추출합니다."""
-        if not olefile.isOleFile(file_path):
-            raise ValueError("올바른 HWP 파일이 아닙니다.")
+        import olefile
+        import zlib
+        import struct
+        import re
+        def remove_hanja(text):
+            # 한자 유니코드 범위: \u4E00 - \u9FFF
+            hanja_pattern = re.compile(r'[\u4E00-\u9FFF]+')
+            return hanja_pattern.sub('', text)
 
-        with olefile.OleFileIO(file_path) as ole:
-            if not ole.exists('PrvText'):
-                raise ValueError("텍스트 스트림(PrvText)을 찾을 수 없습니다.")
-        
-            with ole.openstream('PrvText') as stream:
-                text_bytes = stream.read()
-                text = text_bytes.decode('utf-16', errors='ignore')
-                return text
+        f = olefile.OleFileIO(file_path)
+        dirs = f.listdir()
+
+        # HWP 파일 검증
+        if ["FileHeader"] not in dirs or \
+                ["\x05HwpSummaryInformation"] not in dirs:
+            raise Exception("Not Valid HWP.")
+
+        # 문서 포맷 압축 여부 확인
+        header = f.openstream("FileHeader")
+        header_data = header.read()
+        is_compressed = (header_data[36] & 1) == 1
+
+        # Body Sections 불러오기
+        nums = []
+        for d in dirs:
+            if d[0] == "BodyText":
+                nums.append(int(d[1][len("Section"):]))
+        sections = ["BodyText/Section" + str(x) for x in sorted(nums)]
+
+        # 전체 text 추출
+        text = ""
+        for section in sections:
+            bodytext = f.openstream(section)
+            data = bodytext.read()
+            if is_compressed:
+                unpacked_data = zlib.decompress(data, -15)
+            else:
+                unpacked_data = data
+
+            # 각 Section 내 text 추출
+            section_text = ""
+            i = 0
+            size = len(unpacked_data)
+            while i < size:
+                header = struct.unpack_from("<I", unpacked_data, i)[0]
+                rec_type = header & 0x3ff
+                rec_len = (header >> 20) & 0xfff
+
+                if rec_type in [67]:
+                    rec_data = unpacked_data[i + 4:i + 4 + rec_len]
+                    section_text += rec_data.decode('utf-16')
+                    section_text += "\n"
+
+                i += 4 + rec_len
+
+            text += section_text
+            text += "\n"
+
+        return remove_hanja(text)
     
     def hwpx_extractor(self, file_path: str) -> str:
         """HWPX 파일에서 텍스트를 추출합니다."""
@@ -169,6 +175,7 @@ class AttachmentProcessor:
             return f"[❌ easyocr 텍스트 추출 실패: {e}]"
         
     def extract_text(self, file_path):
+
         _, ext = os.path.splitext(file_path)
         ext = ext.lower()
 
@@ -221,21 +228,16 @@ class AttachmentProcessor:
 if __name__ == "__main__":  
     # 테스트용 URL 목록
     hwp_url = "https://cse.kangwon.ac.kr/cse/community/undergraduate-notice.do?mode=download&articleNo=501724&attachNo=537931"
-    hwpx_url = ""
+    hwpx_url = "https://account.kangwon.ac.kr/account/community/notice.do?mode=download&articleNo=515279&attachNo=539600"
     xlsx_url = "https://cse.kangwon.ac.kr/cse/community/undergraduate-notice.do?mode=download&articleNo=516526&attachNo=539616"
     pdf_url = "https://cse.kangwon.ac.kr/cse/community/undergraduate-notice.do?mode=download&articleNo=516526&attachNo=539615"
-    # pdf_url = "https://duribot.kangwon.ac.kr/chatbot/uploadFile/knu/RD_025.pdf"
-    pdf_url = "https://cse.kangwon.ac.kr/cse/community/undergraduate-notice.do?mode=download&articleNo=422496&attachNo=514871"
-    docx_url = "https://wwwk.kangwon.ac.kr/www/downloadBbsFile.do?atchmnflNo=103343&bbsNo=34&nttNo=176921&&pageUnit=10&key=232&pageIndex=8"
-    txt_url = "https://jw.kangwon.ac.kr/jw/community/notice.do?mode=download&articleNo=365222&attachNo=368559"
+    docx_url = ""
+    txt_url = ""
     image_url = "https://cse.kangwon.ac.kr/cse/community/undergraduate-notice.do?mode=download&articleNo=441793&attachNo=484103"
     error_url = "https://cse.kangwon.ac.kr/cse/community/undergraduate-notice.do?mode=download&articleNo=364536&attachNo=367495"
-    hwp_url = "https://cse.kangwon.ac.kr/cse/community/undergraduate-notice.do?mode=download&articleNo=501724&attachNo=537931"
-    hwpx_url = "https://account.kangwon.ac.kr/account/community/notice.do?mode=download&articleNo=515279&attachNo=539600"
-
     
     test_urls = [
-        # hwp_url,
+        #hwp_url,
         # hwpx_url,
         # xlsx_url,
         pdf_url,
@@ -249,8 +251,5 @@ if __name__ == "__main__":
     results = processor.process_attachments(test_urls)
 
     for url, text in results.items():
-        print(f"URL: {url}\n텍스트: {text[:100]}\n")
-        # 텍스트 전문 확인용
-        with open("extracted_text.txt", "a", encoding="utf-8") as f:
-            f.write(text + "\n")
-            f.write("="*50 + "\n")
+        text = processor.remove_control_chars(text)
+        print(f"URL: {url}\n텍스트: {text}\n")
