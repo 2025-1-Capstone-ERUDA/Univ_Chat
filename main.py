@@ -37,7 +37,16 @@ if __name__ == "__main__":
         user_input = input("질문을 입력하세요 (종료하려면 'exit' 입력): ")
      
         # 부서 선택
-        department = 'all'
+        department_id = input("부서를 선택하세요 (0: 전체, 1: 컴퓨터공학과, 2: AI융합학과): ")
+        if department_id == "0":
+            department = "전체"
+        elif department_id == "1":
+            department = "컴퓨터공학과"
+        elif department_id == "2":
+            department = "AI융합학과"
+        else:
+            print("잘못된 부서 선택입니다.")
+            continue
         
         # 쿼리 처리
         result = process_query(user_input, department)
