@@ -35,7 +35,7 @@ def dataframe_to_documents(df):
         """
         doc = Document(
             page_content=content.strip(),
-            metadata={key: row[key] for key in ['title', 'date', 'author', 'articleNo', 'link', 'attachments', 'university', 'department']}
+            metadata={key: row.get(key, None) for key in ['title', 'date', 'author', 'articleNo', 'link', 'attachments', 'university', 'department']}
         )
         documents.append(doc)
         
