@@ -179,3 +179,4 @@ data/
 test_data/
 tmp/
 vectorstore/
+prompt/prompts.yaml
