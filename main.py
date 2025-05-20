@@ -1,6 +1,6 @@
 import os
 from llm_rag.embedding import load_faiss
-from llm_rag.llm_utils import embedding_prompt, llm_prompt, llm_response
+from llm_rag.llm_utils import embedding_prompt, llm_query_prompt, llm_response
 from llm_rag.rag_utils import search_documents
 
 dir_path = os.path.join(os.path.dirname(__file__), "vectorstore")
@@ -23,9 +23,22 @@ def process_query(text, department):
     doc_texts = "\n".join([doc.page_content for doc in documents])
     
     # LLM 프롬프트 생성
-    prompt = llm_prompt(user_query, doc_texts)
+    prompt = llm_query_prompt(user_query, doc_texts, dp)
 
     # LLM 응답
     response = llm_response(prompt)
     
     return response.text
+
+# 테스트용 코드
+if __name__ == "__main__":
+    while True:
+        # 사용자 입력 받기
+        user_input = input("질문을 입력하세요 (종료하려면 'exit' 입력): ")
+     
+        # 부서 선택
+        department = 'all'
+        
+        # 쿼리 처리
+        result = process_query(user_input, department)
+        print(result)

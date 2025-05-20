@@ -87,7 +87,7 @@ def load_faiss(dir_path: str) -> bool:
 
 # 테스트 실행
 if __name__ == "__main__":
-    csv_path = os.path.join(os.path.dirname(__file__), "..", "data", "posts_2025-04-28_1501.csv")
+    csv_path = os.path.join(os.path.dirname(__file__), "..", "data", "posts_2025-05-17_2130.csv")
     df = pd.read_csv(csv_path, encoding="utf-8-sig")
     
     documents = dataframe_to_documents(df)

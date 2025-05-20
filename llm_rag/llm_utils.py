@@ -33,7 +33,7 @@ def embedding_prompt(user_query: str) -> str:
     
     return prompt_text
 
-def llm_prompt(user_query: str, documents: list) -> str:
+def llm_query_prompt(user_query: str, department: str, documents: list) -> str:
     """
     사용자 질의와 유사한 문서를 통해 LLM에 최적화된 사용자 질의를 생성합니다.
 
@@ -53,7 +53,7 @@ def llm_prompt(user_query: str, documents: list) -> str:
     llm_prompt = PromptTemplate(prompts["llm_prompt"])
     
     # 템플릿 채우기
-    prompt_text = llm_prompt.format(user_query=user_query, document_content=documents)
+    prompt_text = llm_prompt.format(user_query=user_query, document_content=documents, dp=department)
     
     return prompt_text
 
@@ -99,7 +99,7 @@ if __name__ == "__main__":
     doc_texts = "\n".join([doc.page_content for doc in documents])
     
     # LLM 프롬프트 생성
-    llm_query_text = llm_prompt(user_query, doc_texts)
+    llm_query_text = llm_query_prompt(user_query, doc_texts)
     print(f"LLM 프롬프트 템플릿:\n{llm_query_text}\n")
     # LLM 응답
     llm_response = llm_response(llm_query_text)
