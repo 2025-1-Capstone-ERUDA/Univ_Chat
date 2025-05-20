@@ -3,6 +3,7 @@ import os
 import torch
 import pandas as pd
 from langchain.schema import Document
+from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_community.vectorstores import FAISS
 
@@ -16,7 +17,46 @@ embedding_model = HuggingFaceEmbeddings(
     encode_kwargs={"normalize_embeddings": True}
 )
 
+def split_documents(documents: list) -> list:
+    """
+    리스트의 Document 객체의 내용(page_content)을 청크 단위로 분할.
+
+    Params:
+    documents: Document 객체 리스트
+
+    Return:
+    분할된 Document 객체 리스트
+    """
+
+    text_splitter = RecursiveCharacterTextSplitter(
+        chunk_size=1000,
+        chunk_overlap=100,
+        length_function=len,
+        add_start_index=True,
+    )
+
+    split_docs = text_splitter.split_documents(documents)
+
+    return split_docs
+
+
 def dataframe_to_documents(df):
+    """Pandas DataFrame을 LlamaIndex Document 리스트로 변환"""
+    
+    documents = []
+    for _, row in df.iterrows():
+        content = f"""
+        {row['content']}
+        """
+        doc = Document(
+            page_content=content.strip(),
+            metadata={key: row.get(key, None) for key in ['title', 'date', 'author', 'articleNo', 'link', 'attachments', 'university', 'department', 'category']}
+        )
+        documents.append(doc)
+        
+    return documents
+
+def dataframe_to_documents_tmp(df):
     """Pandas DataFrame을 LlamaIndex Document 리스트로 변환"""
     
     documents = []
@@ -91,10 +131,11 @@ if __name__ == "__main__":
     df = pd.read_csv(csv_path, encoding="utf-8-sig")
     
     documents = dataframe_to_documents(df)
+    split_docs = split_documents(documents)
 
     dir_path = os.path.join(os.path.dirname(__file__), "..", "vectorstore")
     
-    db_path = save_faiss(documents, dir_path)
+    db_path = save_faiss(split_docs, dir_path)
     vectorstore = load_faiss(db_path)
     if vectorstore:
         print("FAISS DB 로드 성공")

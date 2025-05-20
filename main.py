@@ -20,7 +20,37 @@ def process_query(text, department):
     print(f"search_query: {search_query.text}")
     
     documents = search_documents(search_query.text, vectorstore)
-    doc_texts = "\n".join([doc.page_content for doc in documents])
+    
+    # for doc in documents:
+    #     # 메타데이터 출력
+    #     print(f"Title: {doc.metadata['title']}")
+    #     print(f"Date: {doc.metadata['date']}")
+    #     print(f"Author: {doc.metadata['author']}")
+    #     print(f"Article No: {doc.metadata['articleNo']}")
+    #     print(f"Link: {doc.metadata['link']}")
+    #     print(f"Attachments: {doc.metadata.get('attachments', '없음')}")
+    #     print(f"University: {doc.metadata['university']}")
+    #     print(f"Department: {doc.metadata['department']}")
+        
+    # 검색된 문서의 내용과 메타데이터를 결합
+    doc_texts = ""
+    for doc in documents:
+        doc_text = f"""
+            제목: {doc.metadata['title']}
+            날짜: {doc.metadata['date']}
+            작성자: {doc.metadata['author']}
+            공지번호: {doc.metadata['articleNo']}
+            링크: {doc.metadata['link']}
+            학교: {doc.metadata['university']}
+            학과: {doc.metadata['department']}
+            첨부파일: {', '.join(doc.metadata['attachments']) if doc.metadata['attachments'] else '없음'}
+            내용: {doc.page_content}
+            
+        """
+        doc_texts += doc_text.strip() + "\n"
+        
+    # doc_texts = "\n".join([doc.page_content for doc in documents])
+    # print(f"doc_texts: {doc_texts}")
     
     # LLM 프롬프트 생성
     prompt = llm_query_prompt(user_query, doc_texts, dp)
@@ -35,6 +65,8 @@ if __name__ == "__main__":
     while True:
         # 사용자 입력 받기
         user_input = input("질문을 입력하세요 (종료하려면 'exit' 입력): ")
+        if user_input.lower() == "exit":
+            break
      
         # 부서 선택
         department_id = input("부서를 선택하세요 (0: 전체, 1: 컴퓨터공학과, 2: AI융합학과): ")
