@@ -50,8 +50,6 @@
       "crawl_timeout": 30,
       "crawl_delay": 0.5
     },
-
-
     {
       "url": "https://health.kangwon.ac.kr/index.php?mt=page&mp=4_1&mm=oxbbs&oxid=1&key=&val=&subcmd=&CAT_ID=0&artpp=15&cpage=1",
       "description": "강원대 보건진료소 공지",
@@ -77,7 +75,6 @@
       "crawl_timeout": 30,
       "crawl_delay": 0.5
     },
-
     {
       "url": "https://sports.kangwon.ac.kr/bbs/board.php?bo_table=sub5_1&page=1",
       "description": "강원대 체육진흥원 공지",
@@ -103,7 +100,6 @@
       "crawl_timeout": 30,
       "crawl_delay": 0.5
     },
-
     {
       "url": "https://support.kangwon.ac.kr/support/notice/notice.do?mode=list&&articleLimit=10&article.offset=0",
       "description": "강원대 장애학생지원센터 공지",
@@ -129,10 +125,6 @@
       "crawl_timeout": 30,
       "crawl_delay": 0.5
     },
-
-
-
-
     {
       "url": "https://wwwk.kangwon.ac.kr/www/selectBbsNttList.do?bbsNo=34&&pageUnit=10&key=232&pageIndex=1",
       "description": "강원대 장학안내 공지",
@@ -183,7 +175,6 @@
       "crawl_timeout": 30,
       "crawl_delay": 0.5
     },
-
     {
       "url": "https://adgraduate.kangwon.ac.kr/adgraduate/admission/notice.do?mode=list&&articleLimit=10&article.offset=0",
       "description": "강원대 일반대학원 입시 공지",
@@ -210,7 +201,7 @@
       "crawl_delay": 0.5
     },
     {
-      "url": "https://wwwk.kangwon.ac.kr/www/selectBbsNttList.do?bbsNo=37&&pageUnit=10&key=1176&pageIndex=1",
+      "url": "https://wwwk.kangwon.ac.kr/www/selectBbsNttList.do?bbsNo=37&&pageUnit=10&searchCtgry=%EC%B6%98%EC%B2%9C&key=1176&pageIndex=1",
       "description": "강원대 학사안내 학사공지",
       "university": "강원대학교",
       "department": "강원대",
@@ -218,7 +209,7 @@
 
       "page_id": "pageIndex",
       "page_start": 1,
-      "page_offset": 10,
+      "page_offset": 1,
 
      "board_path": "#board > table > tbody > tr > td:nth-child(3) > a",
 
@@ -259,9 +250,6 @@
       "crawl_timeout": 30,
       "crawl_delay": 0.5
     },
-
-
-
     {
       "url": "https://wwwk.kangwon.ac.kr/www/selectBbsNttList.do?bbsNo=81&&pageUnit=10&searchCtgry=전체%40%40춘천&key=277&pageIndex=1",
       "description": "강원대 백령광장(춘천) 공지",
@@ -276,7 +264,7 @@
       "board_path": "#board > table > tbody > tr > td:nth-child(3) > a",
 
       "title_path": "tr.subject td",
-      "content_path": "td.bbs_content",
+      "content_path": "#bbs_ntt_cn_con",
       "writer_path": "tbody tr:nth-child(5) td",
       "date_path": "#board > div > div > span:nth-child(2) > strong",
       "attachment_path": "#board > table > tbody > tr:nth-child(6) > td > ul > li > a",
@@ -296,12 +284,12 @@
 
       "page_id": "pageIndex",
       "page_start": 1,
-      "page_offset": 10,
+      "page_offset": 1,
 
       "board_path": "#board > table > tbody > tr > td:nth-child(3) > a",
 
       "title_path": "tr.subject td",
-      "content_path": "td.bbs_content",
+      "content_path": "#bbs_ntt_cn_con",
       "writer_path": "tbody tr:nth-child(5) td",
       "date_path": "#board > div > div > span:nth-child(2) > strong",
       "attachment_path": "#board > table > tbody > tr:nth-child(8) > td > ul > li > a",
@@ -321,12 +309,12 @@
 
       "page_id": "pageIndex",
       "page_start": 1,
-      "page_offset": 10,
+      "page_offset": 1,
 
       "board_path": "#board > table > tbody > tr > td:nth-child(3) > a",
 
       "title_path": "tr.subject td",
-      "content_path": "td.bbs_content",
+      "content_path": "#bbs_ntt_cn_con",
       "writer_path": "tbody tr:nth-child(5) td",
       "date_path": "#board > div > div > span:nth-child(2) > strong",
       "attachment_path": "#board > table > tbody > tr:nth-child(7) > td > ul > li > a",
@@ -346,12 +334,12 @@
 
       "page_id": "pageIndex",
       "page_start": 1,
-      "page_offset": 10,
+      "page_offset": 1,
 
       "board_path": "#board > table > tbody > tr > td:nth-child(3) > a",
 
       "title_path": "tr.subject td",
-      "content_path": "td.bbs_content",
+      "content_path": "#bbs_ntt_cn_con",
       "writer_path": "tbody tr:nth-child(3) td",
       "date_path": "#board > div > div > span:nth-child(2) > strong",
       "attachment_path": "#board > table > tbody > tr:nth-child(5) > td > ul > li > a",
@@ -371,12 +359,12 @@
 
       "page_id": "pageIndex",
       "page_start": 1,
-      "page_offset": 10,
+      "page_offset": 1,
 
       "board_path": "#board > table > tbody > tr > td:nth-child(3) > a",
 
       "title_path": "tr.subject td",
-      "content_path": "td.bbs_content",
+      "content_path": "#bbs_ntt_cn_con",
       "writer_path": "tbody tr:nth-child(3) td",
       "date_path": "#board > div > div > span:nth-child(2) > strong",
       "attachment_path": "#board > table > tbody > tr:nth-child(6) > td > ul > li > a",
@@ -387,7 +375,6 @@
       "crawl_timeout": 30,
       "crawl_delay": 0.5
     },
-
     {
       "url": "https://cse.kangwon.ac.kr/cse/career/career-info.do?mode=list&&articleLimit=10&article.offset=0",
       "description": "강원대 컴퓨터공학과 취업정보",
@@ -439,31 +426,6 @@
       "crawl_delay": 0.5
     },
     {
-      "url": "https://wwwk.kangwon.ac.kr/www/selectBbsNttList.do?bbsNo=34&&pageUnit=10&key=232&pageIndex=1",
-      "description": "강원대 장학안내 공지",
-      "university": "강원대학교",
-      "department": "강원대",
-      "category": "장학안내",
-
-      "page_id": "pageIndex",
-      "page_start": 1,
-      "page_offset": 1,
-
-      "board_path": "td.subject a",
-
-      "title_path": "tr.subject td",
-      "content_path": "#bbs_ntt_cn_con",
-      "writer_path": "#board > table > tbody > tr:nth-child(3) > td:nth-child(2)",
-      "date_path": "#board > div:nth-child(1) > div > span:nth-child(2) > strong",
-      "attachment_path": "ul.view_attach li a",
-
-      "article_ID": "nttNo",
-      "duplicate_check_key": "article_id",
-
-      "crawl_timeout": 30,
-      "crawl_delay": 0.5
-    },
-    {
       "url": "https://wwwk.kangwon.ac.kr/itservice/selectBbsNttList.do?bbsNo=107&&pageUnit=10&key=735&pageIndex=1",
       "description": "강원대 정보화본부 공지사항",
       "university": "강원대학교",
@@ -488,8 +450,6 @@
       "crawl_timeout": 30,
       "crawl_delay": 0.5
     },
-
-
     {
       "url": "https://knuch.or.kr/bbs/board.php?tbl=bbs21&&category=&findType=&findWord=&sort1=&sort2=&it_id=&shop_flag=&mobile_flag=&page=1",
       "description": "강원대 총학생회 공지사항",
