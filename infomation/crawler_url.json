@@ -1,0 +1,57 @@
+{
+  "urls": [
+    
+    
+    {
+      "url": "https://wwwk.kangwon.ac.kr/www/selectBbsNttList.do?bbsNo=81&&pageUnit=10&searchCtgry=전체%40%40춘천&key=277&pageIndex=1",
+      "description": "강원대 백령광장(춘천) 공지",
+      "university": "강원대학교",
+      "department": "백령광장(춘천)",
+      "category": "공지사항",
+
+      "page_id": "pageIndex",
+      "page_start": 1,
+      "page_offset": 1,
+
+      "board_path": "#board > table > tbody > tr > td:nth-child(3) > a",
+
+      "title_path": "tr.subject td",
+      "content_path": "#bbs_ntt_cn_con",
+      "writer_path": "tbody tr:nth-child(5) td",
+      "date_path": "#board > div > div > span:nth-child(2) > strong",
+      "attachment_path": "#board > table > tbody > tr:nth-child(6) > td > ul > li > a",
+
+      "article_ID": "nttNo",
+      "duplicate_check_key": "article_id",
+
+      "crawl_timeout": 30,
+      "crawl_delay": 0.5
+    },
+  
+    {
+      "url": "https://wwwk.kangwon.ac.kr/www/selectBbsNttList.do?bbsNo=345&&pageUnit=10&key=1959&pageIndex=1",
+      "description": "강원대 백령광장(춘천) 공모모집",
+      "university": "강원대학교",
+      "department": "백령광장(춘천)",
+      "category": "공모모집",
+
+      "page_id": "pageIndex",
+      "page_start": 1,
+      "page_offset": 1,
+
+      "board_path": "#board > table > tbody > tr > td:nth-child(3) > a",
+
+      "title_path": "tr.subject td",
+      "content_path": "#bbs_ntt_cn_con",
+      "writer_path": "tbody tr:nth-child(3) td",
+      "date_path": "#board > div > div > span:nth-child(2) > strong",
+      "attachment_path": "#board > table > tbody > tr:nth-child(6) > td > ul > li > a",
+
+      "article_ID": "nttNo",
+      "duplicate_check_key": "article_id",
+
+      "crawl_timeout": 30,
+      "crawl_delay": 0.5
+    }
+  ]
+}
