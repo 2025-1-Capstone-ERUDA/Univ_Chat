@@ -12,7 +12,7 @@ def search_documents(query: str, vectorstore) -> list:
         list: 검색된 문서 리스트
     """
 
-    faiss_results = vectorstore.similarity_search(query, k=10)
+    faiss_results = vectorstore.similarity_search(query, k=100)
     
     return faiss_results
 

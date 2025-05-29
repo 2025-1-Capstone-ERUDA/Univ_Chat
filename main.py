@@ -35,6 +35,8 @@ def process_query(text, department):
     # 검색된 문서의 내용과 메타데이터를 결합
     doc_texts = ""
     for doc in documents:
+        print(f"제목: {doc.metadata['title']}")
+        
         doc_text = f"""
             제목: {doc.metadata['title']}
             날짜: {doc.metadata['date']}
@@ -43,7 +45,7 @@ def process_query(text, department):
             링크: {doc.metadata['link']}
             학교: {doc.metadata['university']}
             학과: {doc.metadata['department']}
-            첨부파일: {', '.join(doc.metadata['attachments']) if doc.metadata['attachments'] else '없음'}
+            첨부파일: {doc.metadata['attachments']}
             내용: {doc.page_content}
             
         """
@@ -53,7 +55,8 @@ def process_query(text, department):
     # print(f"doc_texts: {doc_texts}")
     
     # LLM 프롬프트 생성
-    prompt = llm_query_prompt(user_query, doc_texts, dp)
+    prompt = llm_query_prompt(user_query, dp, doc_texts)
+    print(f"prompt: {prompt}")
 
     # LLM 응답
     response = llm_response(prompt)

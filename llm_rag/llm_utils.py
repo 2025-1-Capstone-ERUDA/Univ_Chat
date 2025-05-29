@@ -53,7 +53,7 @@ def llm_query_prompt(user_query: str, department: str, documents: list) -> str:
     llm_prompt = PromptTemplate(prompts["llm_prompt"])
     
     # 템플릿 채우기
-    prompt_text = llm_prompt.format(user_query=user_query, document_content=documents, dp=department)
+    prompt_text = llm_prompt.format(user_query=user_query, dp=department, document_content=documents)
     
     return prompt_text
 
